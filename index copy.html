@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Character Display</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2c4a9; /* Peachy background color matching the image */
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+        }
+        
+        .image-container {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        
+        .centered-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px; /* Rounded corners */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (min-width: 768px) {
+            .image-container {
+                max-width: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="cute-character-with-puppy.jpg" alt="Cute 3D cartoon character with a small white puppy" class="centered-image">
+        </div>
+    </div>
+</body>
+</html>

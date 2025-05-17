@@ -3,47 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cute Character Display</title>
+    <title>Full Viewport Image</title>
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #e9b99b; /* Peachy background color matching the image */
+        }
+        
+        .image-container {
+            width: 100vw;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f2c4a9; /* Peachy background color matching the image */
-            font-family: Arial, sans-serif;
-        }
-        
-        .container {
-            text-align: center;
-        }
-        
-        .image-container {
-            max-width: 90%;
-            margin: 0 auto;
         }
         
         .centered-image {
             max-width: 100%;
+            max-height: 100%;
+            width: auto;
             height: auto;
+            object-fit: contain; /* Maintains aspect ratio */
             border-radius: 20px; /* Rounded corners */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
-        
-        @media (min-width: 768px) {
-            .image-container {
-                max-width: 500px;
+
+        /* Media query for different screen orientations */
+        @media (orientation: portrait) {
+            .centered-image {
+                width: 90%;
+                height: auto;
+            }
+        }
+
+        @media (orientation: landscape) {
+            .centered-image {
+                width: auto;
+                height: 90%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="image-container">
-            <img src="cute-character-with-puppy.jpg" alt="Cute 3D cartoon character with a small white puppy" class="centered-image">
-        </div>
+    <div class="image-container">
+        <img src="MiloAndFiadh.png" alt="Cute 3D cartoon character with a small white puppy" class="centered-image">
     </div>
 </body>
 </html>
