@@ -11,20 +11,20 @@
             height: 100%;
             width: 100%;
             overflow: hidden;
-            background-color: #e9b99b; /* Peachy background color matching the image */
+            background-color: #f2d0b9; /* Peachy background color matching the image */
         }
         
         .image-container {
-            width: 100%;
-            height: 100%;
+         
+            height: 100vh; /* Default height */
             display: flex;
             justify-content: center;
             align-items: center;
         }
         
         .fullscreen-image {
-            width: 100%;
-            height: 100%;
+            
+            height: 100vh;
             object-fit: cover; /* Covers the entire viewport */
             border: none; /* No border */
         }
@@ -32,7 +32,6 @@
         /* Mobile-specific styles */
         @media only screen and (max-width: 767px) {
             .image-container {
-                width: 100vw;
                 height: 100vh;
             }
             
