@@ -13,6 +13,7 @@
     <script src="assets/vendor/gsap/gsap.min.js" defer></script>
     <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
     <script src="animations.js" defer></script>
+    <script src="christmas-scroll.js" defer></script>
     <script src="amazon-links.mjs" type="module"></script>
     <!-- Existing site analytics. -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GFF7V2JGX"></script>
@@ -130,7 +131,12 @@
       </section>
 
       <section class="amazon-feature" aria-label="A Cozy Milo and Fiadh Christmas, available on Amazon">
-        <img class="amazon-feature-image" src="assets/images/A%20Cozy%20Milo%20and%20Fiadh%20Christmas.png" alt="A Milo and Fiadh Christmas book on a cozy desk beside a snowy window" width="1672" height="941" loading="lazy">
+        <div class="amazon-feature-stage">
+          <img class="amazon-feature-image" src="assets/images/christmas-book-open-poster.jpg" alt="A Milo and Fiadh Christmas book on a cozy desk beside a snowy window" width="1280" height="736" loading="lazy">
+          <video class="amazon-feature-video" id="christmas-book-video" data-src="assets/videos/christmas-book-open.mp4" muted playsinline preload="none" poster="assets/images/christmas-book-open-poster.jpg" aria-hidden="true" tabindex="-1" hidden></video>
+        </div>
+        <div class="christmas-scroll-cue" aria-hidden="true" hidden><span>Scroll to open the story</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7 5 5 5-5"/></svg></div>
+        <div class="christmas-scroll-progress" aria-hidden="true" hidden></div>
         <a class="amazon-feature-button" href="https://www.amazon.com/dp/1069597333?linkCode=ll2&amp;tag=adrianchan-20&amp;linkId=32d125adf2b813c3ec117533e04cc04a&amp;ref_=as_li_ss_tl" data-amazon-link="christmas" rel="sponsored" aria-label="Find A Milo and Fiadh Christmas on Amazon"><img src="assets/images/Amazon%20Button%20White%20Background.svg" alt="Available at Amazon" width="250" height="120" loading="lazy"></a>
       </section>
     </main>

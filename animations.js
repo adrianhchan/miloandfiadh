@@ -91,10 +91,6 @@
           scrollTrigger: { trigger: shape, start: 'top bottom', end: 'bottom top', scrub: 0.8 },
         });
       });
-      gsap.fromTo('.amazon-feature-image', { scale: 1.08, yPercent: -2 }, {
-        scale: 1.08, yPercent: 2, ease: 'none',
-        scrollTrigger: { trigger: '.amazon-feature', start: 'top bottom', end: 'bottom top', scrub: 0.8 },
-      });
     }
 
     // Animate the button's image so its existing horizontal centering is untouched.

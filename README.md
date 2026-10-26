@@ -20,16 +20,20 @@ On mobile (up to 600px wide), the hero text has a close button. Closing it revea
 - `styles.css`: colors, typography, desktop, tablet, and mobile layouts.
 - `script.js`: background video controls, mobile hero text controls, reduced motion support, and the copyright year.
 - `animations.js`: responsive GSAP welcome, scroll reveals, artwork motion, and book-cover interactions.
+- `christmas-scroll.js`: lazily loaded, scroll-controlled Christmas book-opening video.
 - `amazon-routing.mjs`: supported Amazon stores and their destinations.
 - `amazon-links.mjs`: automatic store selection and the footer store selector.
 - `assets/images/`: the supplied artwork and a video poster.
 - `assets/videos/hero-bg.mp4`: optimized, silent, looping hero video.
+- `assets/videos/christmas-book-open.mp4`: silent, all-keyframe H.264 version of `Book Open 004 Christmas.mp4`, optimized for seeking in both directions.
 - `assets/fonts/`: locally hosted Quicksand and its font license.
 - `assets/vendor/gsap/`: pinned GSAP 3.15.0 core and ScrollTrigger, served locally with original license headers and source maps.
 
 ## Animation
 
-GSAP adds a springy logo and hero entrance, sequential paw stamps in the friendship bar, book and character reveals, and a Christmas button entrance. Desktop layouts also get subtle scroll-linked movement in the title/character background shapes and Christmas photo. Fine-pointer devices get book-cover tilt, brief paw bursts, and logo wiggles. Effects finish rather than looping indefinitely, and native page scrolling is preserved.
+GSAP adds a springy logo and hero entrance, sequential paw stamps in the friendship bar, book and character reveals, and a Christmas button entrance. Desktop layouts also get subtle scroll-linked movement in the title/character background shapes. Fine-pointer devices get book-cover tilt, brief paw bursts, and logo wiggles. Effects finish rather than looping indefinitely, and native page scrolling is preserved.
+
+The Christmas section fills the viewport while scrolling scrubs through the 6.58-second book-opening clip. The entire frame stays visible over a blurred poster backdrop, including on mobile. Scrolling backward closes the book, and stopping holds the current frame. The video is muted and never plays automatically. Its first frame supplies the still-image fallback. The Amazon button keeps its localized Christmas product and affiliate link. Scroll distance is 1.8 viewport heights on desktop/tablet and 1.35 on mobile, then the section releases to the footer. The roughly 5 MB clip is fetched when the section is within one viewport of view, then served to the video from a browser-local blob so seeking works even without server byte-range support. Reduced motion skips the download and pinning. Load errors also restore the still image and remove the pin; leaving motion mode aborts the download and releases the blob.
 
 The mobile hero close/restore controls also get a small entrance animation. Motion effects are disabled for `prefers-reduced-motion: reduce`, including when the preference changes while the page is open; the existing video preference handling remains active. All content is visible without GSAP or JavaScript, and keyboard focus immediately completes relevant entrance effects. GSAP's responsive context removes animations, inline styles, and interaction listeners when media conditions change.
 
