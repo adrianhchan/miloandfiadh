@@ -2,6 +2,7 @@ import test, { afterEach, mock } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   AMAZON_MARKETS,
+  AMAZON_AFFILIATE_PARAMETERS,
   AMAZON_PREFERENCE_KEY,
   getAutomaticAmazonRegion,
   getAmazonDestination,
@@ -89,10 +90,11 @@ test('preserves the upstream language-first behavior without saving an automatic
 test('uses the supplied US destination for unknown and unsupported countries', () => {
   browser({ languages: ['pt-BR'], timeZone: 'America/Sao_Paulo' });
   assert.equal(getAutomaticAmazonRegion(), 'US');
-  assert.equal(getAmazonDestination('BR'), 'https://www.amazon.com/dp/B0FF2T9PVG');
+  assert.equal(new URL(getAmazonDestination('BR')).hostname, 'www.amazon.com');
+  assert.equal(new URL(getAmazonDestination('BR')).pathname, '/dp/B0FF2T9PVG');
   browser({ languages: ['en-ZA'], timeZone: 'Africa/Johannesburg' });
   assert.equal(getAutomaticAmazonRegion(), 'US');
-  assert.equal(getAmazonDestination('https://example.com'), 'https://www.amazon.com/dp/B0FF2T9PVG');
+  assert.equal(new URL(getAmazonDestination('https://example.com')).hostname, 'www.amazon.com');
 });
 
 test('avoids the five confirmed missing series pages by using local book searches', () => {
@@ -101,11 +103,55 @@ test('avoids the five confirmed missing series pages by using local book searche
     assert.equal(url.protocol, 'https:');
     assert.equal(url.pathname, '/s', region);
     assert.equal(url.searchParams.get('k'), 'Milo and Fiadh Anita Cheng', region);
-    assert.equal(url.searchParams.has('tag'), false);
+    assert.equal(url.searchParams.get('tag'), 'adrianchan-20');
   }
   for (const region of ['US', 'CA', 'JP', 'UK', 'AU', 'DE', 'ES', 'FR', 'IT']) {
     assert.equal(new URL(getAmazonDestination(region)).pathname, '/dp/B0FF2T9PVG', region);
   }
+});
+
+test('individual books use their own paperback listing on all 14 stores', () => {
+  const products = [
+    ['meet', '1069597309'],
+    ['backyard', '1069597317'],
+    ['snacks', '1069597325'],
+    ['christmas', '1069597333'],
+    ['halloween', '1069597341'],
+  ];
+  for (const market of AMAZON_MARKETS) {
+    for (const [product, asin] of products) {
+      const url = new URL(getAmazonDestination(market.code, product));
+      assert.equal(url.hostname, 'www.' + market.domain);
+      assert.equal(url.pathname, '/dp/' + asin, market.code + ': ' + product);
+      assert.equal(url.searchParams.has('k'), false);
+    }
+  }
+});
+
+test('preserves all supplied affiliate parameters on products, series, and search fallbacks', () => {
+  const expected = {
+    linkCode: 'll2',
+    tag: 'adrianchan-20',
+    linkId: '32d125adf2b813c3ec117533e04cc04a',
+    ref_: 'as_li_ss_tl',
+  };
+  assert.deepEqual(AMAZON_AFFILIATE_PARAMETERS, expected);
+  for (const market of AMAZON_MARKETS) {
+    for (const product of ['series', 'meet', 'backyard', 'snacks', 'christmas', 'halloween']) {
+      const url = new URL(getAmazonDestination(market.code, product));
+      for (const [key, value] of Object.entries(expected)) {
+        assert.deepEqual(url.searchParams.getAll(key), [value], market.code + ': ' + product + ': ' + key);
+      }
+    }
+  }
+});
+
+test('retains the requested book when an unsupported country falls back to the US', () => {
+  const url = new URL(getAmazonDestination('unsupported', 'christmas'));
+  assert.equal(url.hostname, 'www.amazon.com');
+  assert.equal(url.pathname, '/dp/1069597333');
+  assert.equal(url.searchParams.get('tag'), 'adrianchan-20');
+  assert.equal(new URL(getAmazonDestination('US', '__proto__')).pathname, '/dp/B0FF2T9PVG');
 });
 
 test('remembers a manual country selection and can restore automatic selection', () => {

@@ -14,7 +14,7 @@ const select = document.querySelector('#amazon-store');
 const status = document.querySelector('#amazon-store-status');
 const originalLabels = new Map(links.map(link => [
   link,
-  link.getAttribute('aria-label') || link.textContent.trim(),
+  link.getAttribute('aria-label') || link.innerText.trim().replace(/\s+/g, ' '),
 ]));
 
 let storage;
@@ -31,7 +31,7 @@ function updateAmazonLinks() {
   const market = preference === 'auto' ? automatic : getAmazonMarket(preference);
 
   for (const link of links) {
-    link.href = getAmazonDestination(market.code);
+    link.href = getAmazonDestination(market.code, link.dataset.amazonLink || 'series');
     link.dataset.amazonStore = market.code;
     link.setAttribute('aria-label', originalLabels.get(link) + ' (' + market.name + ')');
   }

@@ -4,6 +4,23 @@ export const AMAZON_SERIES_ID = 'B0FF2T9PVG';
 export const AMAZON_DEFAULT_REGION = 'US';
 export const AMAZON_PREFERENCE_KEY = 'miloandfiadh.amazonStore';
 
+export const AMAZON_AFFILIATE_PARAMETERS = Object.freeze({
+  linkCode: 'll2',
+  tag: 'adrianchan-20',
+  linkId: '32d125adf2b813c3ec117533e04cc04a',
+  ref_: 'as_li_ss_tl',
+});
+
+// Paperback product IDs from the official US Amazon series page.
+export const AMAZON_PRODUCTS = Object.freeze({
+  series: Object.freeze({ asin: AMAZON_SERIES_ID }),
+  meet: Object.freeze({ asin: '1069597309' }),
+  backyard: Object.freeze({ asin: '1069597317' }),
+  snacks: Object.freeze({ asin: '1069597325' }),
+  christmas: Object.freeze({ asin: '1069597333' }),
+  halloween: Object.freeze({ asin: '1069597341' }),
+});
+
 // The series page was checked in each marketplace. The five search destinations
 // returned no series page under the US ID.
 // Replace their search destination with a verified local series URL when available.
@@ -40,11 +57,17 @@ export function getAutomaticAmazonRegion() {
   }
 }
 
-export function getAmazonDestination(region) {
+export function getAmazonDestination(region, product = 'series') {
   const market = getAmazonMarket(region);
-  const url = new URL(market.destination === 'series' ? '/dp/' + AMAZON_SERIES_ID : '/s', 'https://www.' + market.domain);
-  if (market.destination === 'search') {
+  const key = Object.hasOwn(AMAZON_PRODUCTS, product) ? product : 'series';
+  const listing = AMAZON_PRODUCTS[key];
+  const search = key === 'series' && market.destination === 'search';
+  const url = new URL(search ? '/s' : '/dp/' + listing.asin, 'https://www.' + market.domain);
+  if (search) {
     url.searchParams.set('k', 'Milo and Fiadh Anita Cheng');
+  }
+  for (const [key, value] of Object.entries(AMAZON_AFFILIATE_PARAMETERS)) {
+    url.searchParams.set(key, value);
   }
   return url.href;
 }
