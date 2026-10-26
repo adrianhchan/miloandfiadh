@@ -93,8 +93,6 @@
       });
     }
 
-    // Animate the button's image so its existing horizontal centering is untouched.
-    reveal('.amazon-feature-button img', { y: 22, scale: 0.8 }, document.querySelector('.amazon-feature-button'));
     reveal('.footer-brand', { y: 22, rotation: -4, scale: 0.94 }, document.querySelector('.footer-brand'));
 
     if (finePointer) {

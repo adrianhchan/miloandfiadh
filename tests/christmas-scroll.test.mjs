@@ -8,7 +8,7 @@ const source = readFileSync(new URL('../christmas-scroll.js', import.meta.url), 
 // Exercise the controller with asynchronous video seeks, without a browser decoder.
 function setup({ motion = true, downloadFailure = false } = {}) {
   const children = Object.fromEntries([
-    '.amazon-feature-image', '.christmas-scroll-cue', '.christmas-scroll-progress',
+    '.amazon-feature-image', '.christmas-scroll-cue', '.christmas-scroll-progress', '.amazon-feature-button',
   ].map(selector => [selector, { hidden: selector !== '.amazon-feature-image' }]));
   const properties = new Map();
   const section = {
@@ -31,6 +31,7 @@ function setup({ motion = true, downloadFailure = false } = {}) {
     removeAttribute(name) { if (name === 'src') this.src = ''; },
   });
   const tweens = [];
+  const reveals = [];
   let cleanup;
   let observer;
   const revoked = [];
@@ -42,6 +43,15 @@ function setup({ motion = true, downloadFailure = false } = {}) {
   const gsap = {
     registerPlugin() {},
     matchMedia: () => ({ add: (_query, callback) => { if (motion) cleanup = callback(); } }),
+    fromTo() {
+      const tween = {
+        value: 0,
+        progress(value) { this.value = value; },
+        revert() { this.reverted = true; },
+      };
+      reveals.push(tween);
+      return tween;
+    },
     to(target, vars) {
       const tween = {
         scrollTrigger: { kill() { this.killed = true; } },
@@ -64,7 +74,7 @@ function setup({ motion = true, downloadFailure = false } = {}) {
     document: { querySelector: selector => selector === '.amazon-feature' ? section : video },
   });
   return {
-    video, children, properties, requests, tweens, revoked,
+    video, children, properties, requests, tweens, reveals, revoked,
     approach: async () => {
       observer.callback([{ isIntersecting: true }]);
       await new Promise(setImmediate);
@@ -122,6 +132,8 @@ test('a media error restores the poster and releases the pinned section', async 
   assert.equal(app.children['.amazon-feature-image'].hidden, false);
   assert.equal(app.children['.christmas-scroll-cue'].hidden, true);
   assert.equal(app.children['.christmas-scroll-progress'].hidden, true);
+  assert.equal(app.children['.amazon-feature-button'].inert, false);
+  assert.equal(app.reveals[0].reverted, true);
 });
 
 test('reduced motion skips pinning/downloads and cleanup ignores late media events', async () => {
@@ -138,10 +150,29 @@ test('reduced motion skips pinning/downloads and cleanup ignores late media even
   assert.equal(app.video.preload, 'none');
   assert.equal(app.video.hidden, true);
   assert.deepEqual(app.revoked, ['blob:christmas-video']);
+  assert.equal(app.children['.amazon-feature-button'].inert, false);
+  assert.equal(app.reveals[0].reverted, true);
   app.video.readyState = 2;
   app.video.dispatchEvent(new Event('loadeddata'));
   assert.equal(app.video.hidden, true);
   assert.equal(app.children['.amazon-feature-image'].hidden, false);
+});
+
+test('the Amazon button reveals after halfway, reverses with scrolling, and cannot receive focus while hidden', () => {
+  const app = setup();
+  const button = app.children['.amazon-feature-button'];
+  assert.equal(button.inert, true);
+  app.tweens[0].progress(0.49);
+  assert.equal(app.reveals[0].value, 0);
+  assert.equal(button.inert, true);
+  app.tweens[0].progress(0.56);
+  assert.ok(Math.abs(app.reveals[0].value - 0.5) < 0.000001);
+  assert.equal(button.inert, false);
+  app.tweens[0].progress(0.7);
+  assert.equal(app.reveals[0].value, 1);
+  app.tweens[0].progress(0.3);
+  assert.equal(app.reveals[0].value, 0);
+  assert.equal(button.inert, true);
 });
 
 test('a failed download restores the poster and removes the pin', async () => {

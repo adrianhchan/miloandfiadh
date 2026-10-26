@@ -31,13 +31,15 @@ On mobile (up to 600px wide), the hero text has a close button. Closing it revea
 
 ## Animation
 
-GSAP adds a springy logo and hero entrance, sequential paw stamps in the friendship bar, book and character reveals, and a Christmas button entrance. Desktop layouts also get subtle scroll-linked movement in the title/character background shapes. Fine-pointer devices get book-cover tilt, brief paw bursts, and logo wiggles. Effects finish rather than looping indefinitely, and native page scrolling is preserved.
+GSAP adds a springy logo and hero entrance, sequential paw stamps in the friendship bar, and book and character reveals. Desktop layouts also get subtle scroll-linked movement in the title/character background shapes. Fine-pointer devices get book-cover tilt, brief paw bursts, and logo wiggles. Effects finish rather than looping indefinitely, and native page scrolling is preserved.
 
 The Christmas section fills the viewport while scrolling scrubs through the 6.58-second book-opening clip. The video covers the viewport edge to edge, with centered cropping as needed on desktop and mobile. Scrolling backward closes the book, and stopping holds the current frame. The video is muted and never plays automatically. Its first frame supplies the still-image fallback. The Amazon button keeps its localized Christmas product and affiliate link. Scroll distance is 1.8 viewport heights on desktop/tablet and 1.35 on mobile, then the section releases to the footer. The roughly 5 MB clip is fetched when the section is within one viewport of view, then served to the video from a browser-local blob so seeking works even without server byte-range support. Reduced motion skips the download and pinning. Load errors also restore the still image and remove the pin; leaving motion mode aborts the download and releases the blob.
 
 The mobile hero close/restore controls also get a small entrance animation. Motion effects are disabled for `prefers-reduced-motion: reduce`, including when the preference changes while the page is open; the existing video preference handling remains active. All content is visible without GSAP or JavaScript, and keyboard focus immediately completes relevant entrance effects. GSAP's responsive context removes animations, inline styles, and interaction listeners when media conditions change.
 
 Implementation references: [GSAP installation](https://gsap.com/docs/v3/Installation/), [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/), and [gsap.matchMedia](https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/).
+
+The page canvas and video fallback backgrounds match the nav shape (`#bee1e6`). The Christmas progress bar uses the footer's base green (`#ccd5ae`). Its Amazon button stays hidden for the first half of the scroll sequence, then fades up 24px into place between 50% and 62%; scrolling backward reverses the reveal. The hidden link cannot receive focus or clicks. With reduced motion, unavailable video, or no JavaScript, the button remains visible and usable.
 
 ## Amazon links
 

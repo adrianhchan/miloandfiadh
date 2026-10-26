@@ -11,6 +11,13 @@
     const poster = section.querySelector('.amazon-feature-image');
     const cue = section.querySelector('.christmas-scroll-cue');
     const progressBar = section.querySelector('.christmas-scroll-progress');
+    const button = section.querySelector('.amazon-feature-button');
+    const buttonReveal = gsap.fromTo(button, {
+      autoAlpha: 0, y: 24, x: 0, xPercent: -50,
+    }, {
+      autoAlpha: 1, y: 0, duration: 1, ease: 'power2.out', paused: true,
+    });
+    button.inert = true;
     const playhead = { progress: 0 };
     const listeners = [];
     let active = true;
@@ -44,6 +51,8 @@
     const update = () => {
       section.style.setProperty('--book-progress', playhead.progress);
       cue.hidden = !ready || playhead.progress > 0.1;
+      buttonReveal.progress(Math.min(1, Math.max(0, (playhead.progress - 0.5) / 0.12)));
+      button.inert = playhead.progress <= 0.5;
       seek();
     };
 
@@ -77,6 +86,8 @@
       poster.hidden = false;
       cue.hidden = true;
       progressBar.hidden = true;
+      buttonReveal.revert();
+      button.inert = false;
       section.style.removeProperty('--book-progress');
     };
 
