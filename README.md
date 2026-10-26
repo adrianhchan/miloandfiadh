@@ -1,6 +1,6 @@
 # Milo and Fiadh
 
-Static homepage built with HTML, CSS, and a little browser JavaScript. No build step or dependencies are required.
+Static homepage built with HTML, CSS, and browser JavaScript. No build step or dependency installation is required.
 
 ## Local preview
 
@@ -19,11 +19,21 @@ On mobile (up to 600px wide), the hero text has a close button. Closing it revea
 - `index.html`: page content and link destinations.
 - `styles.css`: colors, typography, desktop, tablet, and mobile layouts.
 - `script.js`: background video controls, mobile hero text controls, reduced motion support, and the copyright year.
+- `animations.js`: responsive GSAP welcome, scroll reveals, artwork motion, and book-cover interactions.
 - `amazon-routing.mjs`: supported Amazon stores and their destinations.
 - `amazon-links.mjs`: automatic store selection and the footer store selector.
 - `assets/images/`: the supplied artwork and a video poster.
 - `assets/videos/hero-bg.mp4`: optimized, silent, looping hero video.
 - `assets/fonts/`: locally hosted Quicksand and its font license.
+- `assets/vendor/gsap/`: pinned GSAP 3.15.0 core and ScrollTrigger, served locally with original license headers and source maps.
+
+## Animation
+
+GSAP adds a springy logo and hero entrance, sequential paw stamps in the friendship bar, book and character reveals, and a Christmas button entrance. Desktop layouts also get subtle scroll-linked movement in the title/character background shapes and Christmas photo. Fine-pointer devices get book-cover tilt, brief paw bursts, and logo wiggles. Effects finish rather than looping indefinitely, and native page scrolling is preserved.
+
+The mobile hero close/restore controls also get a small entrance animation. Motion effects are disabled for `prefers-reduced-motion: reduce`, including when the preference changes while the page is open; the existing video preference handling remains active. All content is visible without GSAP or JavaScript, and keyboard focus immediately completes relevant entrance effects. GSAP's responsive context removes animations, inline styles, and interaction listeners when media conditions change.
+
+Implementation references: [GSAP installation](https://gsap.com/docs/v3/Installation/), [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/), and [gsap.matchMedia](https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/).
 
 ## Amazon links
 

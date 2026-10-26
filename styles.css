@@ -66,15 +66,19 @@ a:focus-visible, button:focus-visible { outline: 3px solid #166b99; outline-offs
 
 .collection { padding: 74px 5.5% 122px; background: var(--mist); text-align: center; }
 .collection-heading { display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; min-height: 184px; margin: 0 auto 50px; isolation: isolate; }
-.collection-heading::before { position: absolute; z-index: -1; inset: 0; background: url("assets/images/Title Background 01.svg") center / auto 100% no-repeat; content: ""; }
+.collection-heading::before { position: absolute; z-index: -1; inset: 0; background: url("assets/images/Title Background 01.svg") center / auto 100% no-repeat; content: ""; transform: rotate(var(--shape-turn, 0deg)) scale(var(--shape-scale, 1)); }
 .collection-heading h2 { margin: 0 0 10px; color: var(--bright-blue); font-size: clamp(28px, 2.8vw, 40px); font-weight: 700; line-height: 1.2; }
 .collection-heading h2 span { color: var(--orange); }
 .collection-heading p { margin: 0; color: var(--blue); font-size: 21px; font-weight: 600; }
 .book-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px; max-width: 1230px; margin-inline: auto; }
 .book { display: flex; flex-direction: column; align-items: center; }
-.book-image { display: block; width: 100%; max-width: 225px; border-radius: 50%; transition: transform 200ms ease; }
+.book-image { position: relative; display: block; width: 100%; max-width: 225px; border-radius: 50%; transition: transform 200ms ease; }
 .book-image:hover { transform: translateY(-5px) rotate(-2deg); }
+.book-image.is-tilting:hover { transform: none; }
 .book-image img { width: 100%; border-radius: 50%; filter: drop-shadow(0 5px 6px #57361328); }
+.book-image .book-paw { position: absolute; top: 9%; right: 0; width: 24px; height: 26px; opacity: 0; border-radius: 0; filter: none; pointer-events: none; }
+.book-image .book-paw:nth-of-type(3) { top: -1%; right: 12%; }
+.book-image .book-paw:nth-of-type(4) { top: 3%; right: 27%; }
 .book h3 { display: flex; align-items: center; justify-content: center; min-height: 62px; margin: 24px 0 13px; color: var(--bright-blue); font-size: 25px; line-height: 1.2; font-weight: 700; }
 .book h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .book p { flex: 1; margin: 0 0 18px; font-size: 18px; line-height: 1.4; font-weight: 600; }
@@ -88,7 +92,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #166b99; outline-offs
 .character-inner { display: grid; grid-template-columns: 420px 420px; align-items: center; justify-content: space-between; gap: 100px; width: 100%; max-width: 1010px; margin-inline: auto; }
 .character-portrait { width: 420px; }
 .character-copy { position: relative; isolation: isolate; padding-block: 45px; }
-.character-copy::before { position: absolute; z-index: -1; top: 50%; left: 50%; width: 100%; height: calc(100% + 30px); content: ""; transform: translate(-50%, -50%); background-position: center; background-size: contain; background-repeat: no-repeat; pointer-events: none; }
+.character-copy::before { position: absolute; z-index: -1; top: 50%; left: 50%; width: 100%; height: calc(100% + 30px); content: ""; transform: translate(-50%, -50%) rotate(var(--shape-turn, 0deg)) scale(var(--shape-scale, 1)); background-position: center; background-size: contain; background-repeat: no-repeat; pointer-events: none; }
 .character h2 { margin: 0 0 26px; font-size: 57px; font-weight: 700; line-height: 1.2; letter-spacing: -1.5px; }
 .character p { margin: 0 0 30px; font-size: 26px; font-weight: 600; line-height: 1.28; }
 .character p:last-child { margin-bottom: 0; }
@@ -101,7 +105,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #166b99; outline-offs
 .character-fiadh .character-name { color: #c44b43; }
 .character-fiadh .character-copy::before { top: 60%; left: 47%; height: 94%; background-image: url("assets/images/Fiadh Background Shape.svg"); }
 
-.amazon-feature { position: relative; background: #aa784f; }
+.amazon-feature { position: relative; overflow: clip; background: #aa784f; }
 .amazon-feature-image { width: 100%; aspect-ratio: 1672 / 941; object-fit: cover; }
 .amazon-feature-button { position: absolute; bottom: 11%; left: 50%; width: 250px; transform: translateX(-50%); border-radius: 18px; transition: filter 180ms ease; }
 .amazon-feature-button:hover { filter: drop-shadow(0 5px 10px #38201766); }

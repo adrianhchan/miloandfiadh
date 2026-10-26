@@ -48,6 +48,7 @@ if (heroCard && heroClose && heroRestore) {
     heroCard.hidden = !show;
     heroClose.hidden = !mobileHero.matches;
     heroRestore.hidden = show || !mobileHero.matches;
+    heroCard.dispatchEvent(new CustomEvent('hero:visibility', { detail: { show } }));
 
     if (moveFocus) {
       (show ? heroClose : heroRestore).focus({ preventScroll: true });
