@@ -55,6 +55,6 @@ Run routing checks with:
 node --test tests/*.test.mjs
 ```
 
-The hero's “Check it out!” button scrolls to the collection. Instagram uses the supplied profile URL, and email uses `mailto:hi@miloandfiadh.com`. Unfinished information, legal, TikTok, and YouTube links retain `href="#"`. The navigation and footer logos link home.
+The hero's “Check it out!” button scrolls to the collection. Instagram, TikTok, and YouTube use the supplied profile URLs, and email uses `mailto:hi@miloandfiadh.com`. Unfinished information and legal links retain `href="#"`. The navigation and footer logos link home.
 
 The existing custom-domain file and Google Analytics configuration are retained. Changes are local; nothing is published automatically.
