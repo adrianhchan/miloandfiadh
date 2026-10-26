@@ -38,4 +38,32 @@ if (video && videoToggle) {
   applyMotionPreference();
 }
 
+const heroCard = document.querySelector('#hero-card');
+const heroClose = document.querySelector('.hero-card-close');
+const heroRestore = document.querySelector('.hero-card-restore');
+const mobileHero = window.matchMedia('(max-width: 600px)');
+
+if (heroCard && heroClose && heroRestore) {
+  const showHeroCard = (show, moveFocus = false) => {
+    heroCard.hidden = !show;
+    heroClose.hidden = !mobileHero.matches;
+    heroRestore.hidden = show || !mobileHero.matches;
+
+    if (moveFocus) {
+      (show ? heroClose : heroRestore).focus({ preventScroll: true });
+    }
+  };
+
+  heroClose.addEventListener('click', () => showHeroCard(false, true));
+  heroRestore.addEventListener('click', () => showHeroCard(true, true));
+  mobileHero.addEventListener('change', () => {
+    const controlFocused = [heroClose, heroRestore].includes(document.activeElement);
+    showHeroCard(true);
+    if (controlFocused) {
+      (mobileHero.matches ? heroClose : heroCard.querySelector('.hero-button')).focus({ preventScroll: true });
+    }
+  });
+  showHeroCard(true);
+}
+
 document.querySelector('#copyright-year').textContent = new Date().getFullYear();

@@ -12,11 +12,13 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 Open http://127.0.0.1:4173 in your browser. Use this local preview so browsers can load the self-hosted font correctly.
 
+On mobile (up to 600px wide), the hero text has a close button. Closing it reveals a restore button at the hero's bottom right while the video keeps playing. The text returns on reload or when switching to a wider layout.
+
 ## Files
 
 - `index.html`: page content and link destinations.
 - `styles.css`: colors, typography, desktop, tablet, and mobile layouts.
-- `script.js`: background video controls, reduced motion support, and the copyright year.
+- `script.js`: background video controls, mobile hero text controls, reduced motion support, and the copyright year.
 - `amazon-routing.mjs`: supported Amazon stores and their destinations.
 - `amazon-links.mjs`: automatic store selection and the footer store selector.
 - `assets/images/`: the supplied artwork and a video poster.
