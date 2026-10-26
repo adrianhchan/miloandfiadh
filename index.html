@@ -10,6 +10,7 @@
     <link rel="preload" href="assets/fonts/quicksand-variable.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script src="amazon-links.mjs" type="module"></script>
     <!-- Existing site analytics. -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GFF7V2JGX"></script>
     <script>
@@ -27,8 +28,8 @@
         <a class="nav-logo" href="./" aria-label="Milo and Fiadh home">
           <img src="assets/images/Logo%20Nav.png" alt="Milo and Fiadh" width="682" height="682" fetchpriority="high">
         </a>
-        <!-- Replace # destinations as the remaining pages and Amazon links become available. -->
-        <a class="button nav-amazon" href="#">Now on Amazon</a>
+        <!-- Replace # destinations as the remaining pages become available. -->
+        <a class="button nav-amazon" href="https://www.amazon.com/dp/B0FF2T9PVG" data-amazon-link>Now on Amazon</a>
       </nav>
     </header>
     <main id="main">
@@ -121,7 +122,7 @@
 
       <section class="amazon-feature" aria-label="A Cozy Milo and Fiadh Christmas, available on Amazon">
         <img class="amazon-feature-image" src="assets/images/A%20Cozy%20Milo%20and%20Fiadh%20Christmas.png" alt="A Milo and Fiadh Christmas book on a cozy desk beside a snowy window" width="1672" height="941" loading="lazy">
-        <a class="amazon-feature-button" href="#" aria-label="Find Milo and Fiadh on Amazon"><img src="assets/images/Amazon%20Button%20White%20Background.svg" alt="Available at Amazon" width="250" height="120" loading="lazy"></a>
+        <a class="amazon-feature-button" href="https://www.amazon.com/dp/B0FF2T9PVG" data-amazon-link aria-label="Find Milo and Fiadh on Amazon"><img src="assets/images/Amazon%20Button%20White%20Background.svg" alt="Available at Amazon" width="250" height="120" loading="lazy"></a>
       </section>
     </main>
 
@@ -153,7 +154,14 @@
             <li><a href="#" aria-label="Milo and Fiadh on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 6.4c-.2-.9-1.6-1.6-1.8-1.8C18.2 4.2 12 4.2 12 4.2s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8 2 12 2 12s0 4 .4 5.6c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8C22 16 22 12 22 12s0-4-.4-5.6z"/><path d="m10 8 6 4-6 4z" fill="#ccd5ae"/></svg><span>MiloAndFiadh</span></a></li>
             <li><a href="#" aria-label="Email Milo and Fiadh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 6 9 7 9-7"/></svg><span>hi@miloandfiadh.com</span></a></li>
           </ul>
-          <a class="footer-amazon" href="#" aria-label="Find Milo and Fiadh on Amazon"><img src="assets/images/Amazon%20Button%20Clear%20Background.svg" alt="Available at Amazon" width="250" height="120" loading="lazy"></a>
+          <div class="amazon-store-picker" hidden>
+            <label for="amazon-store">Your Amazon store</label>
+            <select id="amazon-store" name="amazon-store">
+              <option value="auto">Automatic</option>
+            </select>
+            <p id="amazon-store-status" class="visually-hidden" role="status"></p>
+          </div>
+          <a class="footer-amazon" href="https://www.amazon.com/dp/B0FF2T9PVG" data-amazon-link aria-label="Find Milo and Fiadh on Amazon"><img src="assets/images/Amazon%20Button%20Clear%20Background.svg" alt="Available at Amazon" width="250" height="120" loading="lazy"></a>
         </div>
       </div>
       <div class="footer-bottom">

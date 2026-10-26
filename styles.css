@@ -31,6 +31,7 @@ button:not(:disabled), a { touch-action: manipulation; }
 a:focus-visible, button:focus-visible { outline: 3px solid #166b99; outline-offset: 6px; }
 ::selection { color: #fff; background: #1d80bc; }
 [hidden] { display: none !important; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 
 .skip-link { position: fixed; z-index: 10; top: 12px; left: 12px; padding: 12px 20px; border-radius: 8px; background: #fff; transform: translateY(-150%); }
 .skip-link:focus { transform: translateY(0); }
@@ -118,6 +119,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid #166b99; outline-offs
 .footer-social li a { display: flex; align-items: center; gap: 12px; }
 .footer-social svg { flex: 0 0 auto; width: 23px; height: 23px; }
 .footer-amazon { display: block; width: 250px; max-width: 100%; margin: 38px auto 0; padding: 0; border-radius: 18px; background: #ffffff40; }
+.amazon-store-picker { max-width: 250px; margin-top: 28px; }
+.amazon-store-picker label { display: block; margin-bottom: 8px; font-size: 16px; font-weight: 700; }
+.amazon-store-picker select { width: 100%; min-height: 44px; padding: 10px 8px; border: 1px solid #909b75; border-radius: 10px; background: #f2f4df; color: var(--ink); font: 600 14px Quicksand, sans-serif; cursor: pointer; }
+.amazon-store-picker select:focus-visible { outline: 3px solid #166b99; outline-offset: 4px; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 25px; max-width: 1290px; min-height: 52px; margin: 100px auto 0; font-size: 16px; font-weight: 600; }
 .footer-bottom p { margin: 0; }
 .footer-bottom nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
