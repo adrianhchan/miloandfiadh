@@ -14,6 +14,8 @@ Open http://127.0.0.1:4173 in your browser. Use this local preview so browsers c
 
 On mobile (up to 600px wide), the hero text has a close button. Closing it reveals a restore button at the hero's bottom right while the video keeps playing. The text returns on reload or when switching to a wider layout.
 
+The hero video has a responsive top inset to expose more of the scene below the navigation wave: 48–80px on desktop/tablet and 36px on mobile. This keeps its upper edge behind the wave. The image is aligned to the top and still covers its video area without bars. Adjust `--hero-video-top-gap` in `styles.css` to tune this spacing; the overall hero remains 80% of the viewport on desktop/tablet and 90% on mobile.
+
 ## Files
 
 - `index.html`: page content and link destinations.

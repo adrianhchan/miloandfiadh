@@ -47,8 +47,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid #166b99; outline-offs
 .nav-logo img { width: 100%; }
 .nav-amazon { margin-top: clamp(25px, 3.4vw, 50px); padding: 16px 34px; font-size: 23px; white-space: nowrap; }
 
-.hero { position: relative; height: 80vh; height: 80svh; overflow: hidden; background: var(--sky); }
-.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero { --hero-video-top-gap: clamp(48px, 5vw, 80px); position: relative; height: 80vh; height: 80svh; overflow: hidden; background: var(--sky); }
+.hero-video { position: absolute; inset: var(--hero-video-top-gap) 0 0; width: 100%; height: calc(100% - var(--hero-video-top-gap)); object-fit: cover; object-position: center top; }
 .hero-content { position: relative; height: 100%; width: min(100% - 104px, 1390px); margin-inline: auto; display: flex; align-items: center; justify-content: flex-end; padding-top: clamp(100px, 12svh, 150px); padding-bottom: clamp(24px, 3svh, 50px); }
 .hero-card { display: flex; flex-direction: column; align-items: flex-start; width: 466px; min-height: min(544px, 52svh); padding: 50px 47px 44px; border: 2px solid #fff3; border-radius: 48px; color: #fff5e9; background: #49200dc9; -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); box-shadow: 0 4px 18px #5d31151a; }
 .hero-card h1 { margin: 0 0 28px; font-size: clamp(34px, 3.1vw, 46px); font-weight: 700; line-height: 1.23; letter-spacing: -.7px; }
@@ -195,8 +195,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid #166b99; outline-offs
   .nav-background { height: 142px; }
   .nav-logo { width: 148px; margin: -18px 0 0 -3px; }
   .nav-amazon { margin-top: 23px; padding: 10px 17px; font-size: 14px; border-width: 4px; }
-  .hero { height: 90vh; height: 90svh; }
-  .hero-video { object-position: 40% center; }
+  .hero { --hero-video-top-gap: 36px; height: 90vh; height: 90svh; }
+  .hero-video { object-position: 40% top; }
   .hero-content { width: calc(100% - 36px); align-items: flex-end; justify-content: center; padding-top: 145px; padding-bottom: 60px; }
   .hero-card { position: relative; width: 100%; max-width: 320px; min-height: auto; padding: 18px 20px; border-radius: 24px; background: #49200dbd; }
   .hero-card h1 { margin-bottom: 10px; padding-right: 32px; font-size: 27px; line-height: 1.16; }
