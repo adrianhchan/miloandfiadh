@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milo and Fiadh</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #f2d0b9; /* Peachy background color matching the image */
+        }
+        
+        .image-container {
+         
+            height: 100vh; /* Default height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .fullscreen-image {
+            
+            height: 100vh;
+            object-fit: cover; /* Covers the entire viewport */
+            border: none; /* No border */
+        }
+        
+        /* Mobile-specific styles */
+        @media only screen and (max-width: 767px) {
+            .image-container {
+                height: 100vh;
+            }
+            
+            .fullscreen-image {
+                height: 100vh;
+            }
+        }
+        
+        /* For newer mobile browsers that support dvh */
+        @supports (height: 100dvh) {
+            @media only screen and (max-width: 767px) {
+                .image-container {
+                    height: 100dvh;
+                }
+                
+                .fullscreen-image {
+                    height: 100dvh;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="BGHero.jpg" alt="3D cartoon character with a small white puppy" class="fullscreen-image">
+    </div>
+</body>
+</html>
