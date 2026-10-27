@@ -41,13 +41,12 @@ if (video && videoToggle) {
 const heroCard = document.querySelector('#hero-card');
 const heroClose = document.querySelector('.hero-card-close');
 const heroRestore = document.querySelector('.hero-card-restore');
-const mobileHero = window.matchMedia('(max-width: 600px)');
 
 if (heroCard && heroClose && heroRestore) {
   const showHeroCard = (show, moveFocus = false) => {
     heroCard.hidden = !show;
-    heroClose.hidden = !mobileHero.matches;
-    heroRestore.hidden = show || !mobileHero.matches;
+    heroClose.hidden = !show;
+    heroRestore.hidden = show;
     heroCard.dispatchEvent(new CustomEvent('hero:visibility', { detail: { show } }));
 
     if (moveFocus) {
@@ -57,13 +56,6 @@ if (heroCard && heroClose && heroRestore) {
 
   heroClose.addEventListener('click', () => showHeroCard(false, true));
   heroRestore.addEventListener('click', () => showHeroCard(true, true));
-  mobileHero.addEventListener('change', () => {
-    const controlFocused = [heroClose, heroRestore].includes(document.activeElement);
-    showHeroCard(true);
-    if (controlFocused) {
-      (mobileHero.matches ? heroClose : heroCard.querySelector('.hero-button')).focus({ preventScroll: true });
-    }
-  });
   showHeroCard(true);
 }
 

@@ -12,7 +12,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 Open http://127.0.0.1:4173 in your browser. Use this local preview so browsers can load the self-hosted font correctly.
 
-On mobile (up to 600px wide), the hero text has a close button. Closing it reveals a restore button at the hero's bottom right while the video keeps playing. The text returns on reload or when switching to a wider layout.
+At every screen size, the hero text has a close button. Closing it reveals a restore button at the hero's bottom right while the video keeps playing. The hidden/shown state persists when resizing; the text returns on reload.
 
 The hero video has a responsive top inset to expose more of the scene below the navigation wave: 48–80px on desktop/tablet and 36px on mobile. This keeps its upper edge behind the wave. The image is aligned to the top and still covers its video area without bars. Adjust `--hero-video-top-gap` in `styles.css` to tune this spacing; the overall hero remains 80% of the viewport on desktop/tablet and 90% on mobile.
 
@@ -20,7 +20,7 @@ The hero video has a responsive top inset to expose more of the scene below the 
 
 - `index.html`: page content and link destinations.
 - `styles.css`: colors, typography, desktop, tablet, and mobile layouts.
-- `script.js`: background video controls, mobile hero text controls, reduced motion support, and the copyright year.
+- `script.js`: background video controls, hero text controls, reduced motion support, and the copyright year.
 - `animations.js`: responsive GSAP welcome, scroll reveals, artwork motion, and book-cover interactions.
 - `christmas-scroll.js`: lazily loaded, scroll-controlled Christmas book-opening video.
 - `amazon-routing.mjs`: supported Amazon stores and their destinations.
@@ -37,7 +37,7 @@ GSAP adds a springy logo and hero entrance, sequential paw stamps in the friends
 
 The Christmas section fills the viewport while scrolling scrubs through the 6.58-second book-opening clip. The video covers the viewport edge to edge, with centered cropping as needed on desktop and mobile. Scrolling backward closes the book, and stopping holds the current frame. The video is muted and never plays automatically. Its first frame supplies the still-image fallback. The Amazon button keeps its localized Christmas product and affiliate link. Scroll distance is 1.8 viewport heights on desktop/tablet and 1.35 on mobile, then the section releases to the footer. The roughly 5 MB clip is fetched when the section is within one viewport of view, then served to the video from a browser-local blob so seeking works even without server byte-range support. Reduced motion skips the download and pinning. Load errors also restore the still image and remove the pin; leaving motion mode aborts the download and releases the blob.
 
-The mobile hero close/restore controls also get a small entrance animation. Motion effects are disabled for `prefers-reduced-motion: reduce`, including when the preference changes while the page is open; the existing video preference handling remains active. All content is visible without GSAP or JavaScript, and keyboard focus immediately completes relevant entrance effects. GSAP's responsive context removes animations, inline styles, and interaction listeners when media conditions change.
+The hero close/restore controls also get a small entrance animation. Motion effects are disabled for `prefers-reduced-motion: reduce`, including when the preference changes while the page is open; the existing video preference handling remains active. All content is visible without GSAP or JavaScript, and keyboard focus immediately completes relevant entrance effects. GSAP's responsive context removes animations, inline styles, and interaction listeners when media conditions change.
 
 Implementation references: [GSAP installation](https://gsap.com/docs/v3/Installation/), [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/), and [gsap.matchMedia](https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/).
 
