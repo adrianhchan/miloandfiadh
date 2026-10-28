@@ -43,6 +43,7 @@ const heroClose = document.querySelector('.hero-card-close');
 const heroRestore = document.querySelector('.hero-card-restore');
 
 if (heroCard && heroClose && heroRestore) {
+  let revealTimer;
   const showHeroCard = (show, moveFocus = false) => {
     heroCard.hidden = !show;
     heroClose.hidden = !show;
@@ -54,9 +55,19 @@ if (heroCard && heroClose && heroRestore) {
     }
   };
 
-  heroClose.addEventListener('click', () => showHeroCard(false, true));
-  heroRestore.addEventListener('click', () => showHeroCard(true, true));
-  showHeroCard(true);
+  heroClose.addEventListener('click', () => {
+    clearTimeout(revealTimer);
+    showHeroCard(false, true);
+  });
+  heroRestore.addEventListener('click', () => {
+    clearTimeout(revealTimer);
+    showHeroCard(true, true);
+  });
+  showHeroCard(false);
+  document.documentElement.classList.remove('hero-intro-pending');
+  revealTimer = setTimeout(() => {
+    showHeroCard(true, document.activeElement === heroRestore);
+  }, 5000);
 }
 
 document.querySelector('#copyright-year').textContent = new Date().getFullYear();
