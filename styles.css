@@ -133,7 +133,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #166b99; outline-offs
 .footer-social ul { padding: 0; list-style: none; }
 .footer-social li { margin-bottom: 10px; padding: 0; }
 .footer-social li a { display: flex; align-items: center; gap: 12px; }
-.footer-social img { flex: 0 0 auto; width: 23px; height: 23px; object-fit: contain; }
+.footer-social li img { flex: 0 0 auto; width: 23px; height: 23px; object-fit: contain; }
 .footer-amazon { display: block; width: 250px; max-width: 100%; margin: 38px auto 0; padding: 0; border-radius: 18px; background: #ffffff40; }
 .amazon-store-picker { max-width: 250px; margin-top: 28px; }
 .amazon-store-picker label { display: block; margin-bottom: 8px; font-size: 16px; font-weight: 700; }
