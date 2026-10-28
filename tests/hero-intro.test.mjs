@@ -5,13 +5,13 @@ import { runInNewContext } from 'node:vm';
 
 const source = readFileSync(new URL('../script.js', import.meta.url), 'utf8');
 
-function setup() {
+function setup({ delayed = true } = {}) {
   let now = 0;
   let nextId = 0;
   const timers = new Map();
   const document = {
     activeElement: null,
-    documentElement: { classList: { remove() {} } },
+    documentElement: { classList: { contains: () => delayed, remove() {} } },
     querySelector: selector => elements[selector] || null,
   };
   const element = () => Object.assign(new EventTarget(), {
@@ -93,4 +93,16 @@ test('automatic reveal preserves keyboard focus when the restore button disappea
   app.click(app.close);
   app.advance(10000);
   assert.equal(app.card.hidden, true);
+});
+
+test('detail-page heroes show immediately and stay closed after a visitor minimizes them', () => {
+  const app = setup({ delayed: false });
+  assert.equal(app.card.hidden, false);
+  assert.equal(app.close.hidden, false);
+  assert.equal(app.restore.hidden, true);
+  app.click(app.close);
+  app.advance(5000);
+  assert.equal(app.card.hidden, true);
+  app.click(app.restore);
+  assert.equal(app.card.hidden, false);
 });

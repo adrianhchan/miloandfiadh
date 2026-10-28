@@ -63,11 +63,14 @@ if (heroCard && heroClose && heroRestore) {
     clearTimeout(revealTimer);
     showHeroCard(true, true);
   });
-  showHeroCard(false);
+  const delayReveal = document.documentElement.classList.contains('hero-intro-pending');
+  showHeroCard(!delayReveal);
   document.documentElement.classList.remove('hero-intro-pending');
-  revealTimer = setTimeout(() => {
-    showHeroCard(true, document.activeElement === heroRestore);
-  }, 5000);
+  if (delayReveal) {
+    revealTimer = setTimeout(() => {
+      showHeroCard(true, document.activeElement === heroRestore);
+    }, 5000);
+  }
 }
 
 document.querySelector('#copyright-year').textContent = new Date().getFullYear();

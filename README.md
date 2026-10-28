@@ -12,7 +12,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 Open http://127.0.0.1:4173 in your browser. Use this local preview so browsers can load the self-hosted font correctly.
 
-On the homepage and all five book pages, the hero text starts minimized and appears after five seconds. Visitors can use the restore button at the hero's bottom right to open it sooner; doing so cancels the automatic reveal, so closing it again keeps it minimized. The video keeps playing, and the hidden/shown state persists when resizing. Reloading starts the five-second delay again. Automatic reveal does not move focus unless the restore button currently has focus. Without JavaScript, the text is visible immediately.
+On the homepage, the hero text starts minimized and appears after five seconds. Visitors can use the restore button at the hero's bottom right to open it sooner; doing so cancels the automatic reveal, so closing it again keeps it minimized. All five book detail pages show their hero text immediately on page load. The video keeps playing, and the hidden/shown state persists when resizing. Reloading the homepage starts the five-second delay again. Automatic reveal does not move focus unless the restore button currently has focus. Without JavaScript, the text is visible immediately on every page.
 
 The hero video has a responsive top inset to expose more of the scene below the navigation wave: 48–80px on desktop/tablet and 36px on mobile. This keeps its upper edge behind the wave. The image is aligned to the top and still covers its video area without bars. Adjust `--hero-video-top-gap` in `styles.css` to tune this spacing; the overall hero remains 80% of the viewport on desktop/tablet and 90% on mobile.
 
