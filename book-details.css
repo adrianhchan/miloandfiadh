@@ -9,6 +9,7 @@
 .detail-snacks { --book-theme: #e0e6ff; --book-accent: #1d8bc7; --book-button: #bee1e6; --book-button-text: #1d80bc; }
 .detail-christmas { --book-theme: #fff1e6; --book-accent: #f47c00; --book-button: #f4b1b5; --book-button-text: #cf2025; }
 .detail-halloween { --book-theme: #ffdfbd; --book-accent: #f47c00; --book-button: #ff971b; }
+.book-detail body { background: var(--book-theme); }
 
 .book-detail .nav-background {
   aspect-ratio: 1440 / 284;
