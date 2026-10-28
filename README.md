@@ -1,6 +1,6 @@
 # Milo and Fiadh
 
-Static homepage built with HTML, CSS, and browser JavaScript. No build step or dependency installation is required.
+Static website built with HTML, CSS, and browser JavaScript. No build step or dependency installation is required.
 
 ## Local preview
 
@@ -19,7 +19,9 @@ The hero video has a responsive top inset to expose more of the scene below the 
 ## Files
 
 - `index.html`: page content and link destinations.
-- `styles.css`: colors, typography, desktop, tablet, and mobile layouts.
+- `styles.css`: shared colors, typography, desktop, tablet, and mobile layouts.
+- `book-details.css`: book-specific themes, hero artwork, character panels, and four-book collection layouts.
+- `meet-milo-and-fiadh.html`, `backyard-adventures.html`, `fun-with-snacks.html`, `a-milo-and-fiadh-christmas.html`, and `halloween.html`: standalone book detail pages, usable without JavaScript.
 - `script.js`: background video controls, hero text controls, reduced motion support, and the copyright year.
 - `animations.js`: responsive GSAP welcome, scroll reveals, artwork motion, and book-cover interactions.
 - `christmas-scroll.js`: lazily loaded, scroll-controlled Christmas book-opening video.
@@ -53,7 +55,9 @@ Supported stores: US, Canada, Japan, UK, Australia, Belgium, Germany, Spain, Fra
 
 The supplied US link opens the series: https://www.amazon.com/dp/B0FF2T9PVG. Browser checks found the same series ID on the US, Canadian, Japanese, UK, Australian, German, Spanish, French, and Italian sites. Belgium, Ireland, Netherlands, Poland, and Sweden returned a missing page for that ID; those destinations use a local Amazon search for `Milo and Fiadh Anita Cheng` instead. The code does not check Amazon availability during a visitor's session.
 
-The book images, titles, buttons, and footer collection links open each corresponding paperback. The Christmas feature opens the Christmas paperback. The header and footer Amazon buttons open the full series.
+The book images, titles, buttons, and footer collection links open each corresponding detail page. Each detail page uses its numbered `Book Logo` in the navigation, `Book Title` above the hero copy, and a muted, looping `00x Open.mp4` background. These supplied clips are optimized to 1280 × 720 H.264 with audio removed and fast-start metadata; first-frame posters provide a still fallback. The hero pause and text hide/restore controls also work on detail pages.
+
+Detail pages place the character panels side by side on desktop and stack them on mobile. Each collection shows the other four books. The hero CTA and top navigation Amazon button open that page’s paperback, using the existing affiliate parameters and regional store selection. The footer Amazon button opens the series. The homepage Christmas feature continues to open the Christmas paperback directly, and the homepage header and footer Amazon buttons open the series.
 
 | Book | Paperback product ID |
 | --- | --- |
@@ -65,9 +69,9 @@ The book images, titles, buttons, and footer collection links open each correspo
 
 Every Amazon URL includes the supplied affiliate parameters: `linkCode=ll2`, `tag=adrianchan-20`, `linkId=32d125adf2b813c3ec117533e04cc04a`, and `ref_=as_li_ss_tl`. These are applied to all supported stores, including the series-search fallbacks. Amazon Associates account eligibility and tracking IDs for each marketplace remain separate from the website's link routing.
 
-To add a verified regional series page later, update that market's destination in `amazon-routing.mjs`. Product IDs and affiliate parameters are configured there as well. Without JavaScript, all 23 Amazon links retain their tagged US destinations.
+To add a verified regional series page later, update that market's destination in `amazon-routing.mjs`. Product IDs and affiliate parameters are configured there as well. Without JavaScript, all purchase links retain their tagged US destinations.
 
-Book links are marked with `data-amazon-link="meet"`, `"backyard"`, `"snacks"`, `"christmas"`, or `"halloween"`. When an individual book page is built, replace that link's `href` and remove the data attribute to prevent Amazon routing from rewriting it.
+Purchase links are marked with `data-amazon-link="meet"`, `"backyard"`, `"snacks"`, `"christmas"`, or `"halloween"`. Links to detail pages do not carry this attribute, so Amazon routing cannot rewrite internal navigation.
 
 Run routing checks with:
 

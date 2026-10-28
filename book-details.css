@@ -1,0 +1,91 @@
+.book-detail {
+  --book-theme: #fce2e5;
+  --book-accent: #cf2025;
+  --book-button: #f47c00;
+  --book-button-text: #fff;
+  background: var(--book-theme);
+}
+.detail-backyard { --book-theme: #e9edc9; --book-accent: #f47c00; --book-button: #e9edc9; --book-button-text: #e47800; }
+.detail-snacks { --book-theme: #e0e6ff; --book-accent: #1d8bc7; --book-button: #bee1e6; --book-button-text: #1d80bc; }
+.detail-christmas { --book-theme: #fff1e6; --book-accent: #f47c00; --book-button: #f4b1b5; --book-button-text: #cf2025; }
+.detail-halloween { --book-theme: #ffdfbd; --book-accent: #f47c00; --book-button: #ff971b; }
+
+.book-detail .nav-background {
+  aspect-ratio: 1440 / 284;
+  background: var(--book-theme);
+  -webkit-mask: url("assets/images/Nav Background.svg") center / 100% 100% no-repeat;
+  mask: url("assets/images/Nav Background.svg") center / 100% 100% no-repeat;
+}
+.book-detail .nav-amazon { border-color: #fff4e9; }
+.book-detail .hero { background: var(--book-theme); height: max(80svh, 920px); }
+.book-detail .hero-content { padding-top: 210px; padding-bottom: 65px; }
+.book-detail .hero-card { min-height: 600px; padding-top: 92px; }
+.hero-book-title {
+  position: absolute;
+  top: -108px;
+  left: 50%;
+  width: 275px;
+  height: 200px;
+  object-fit: contain;
+  transform: translateX(-50%);
+}
+.book-detail .hero-card h1 { font-size: clamp(32px, 3vw, 44px); }
+.book-detail .hero-card p { font-size: 25px; }
+.book-detail .hero-button { background: var(--book-button); color: var(--book-button-text); }
+.book-detail .friendship-bar { background: var(--book-theme); color: var(--book-accent); }
+.detail-paw { flex: 0 0 auto; width: 32px; height: 35px; background: var(--book-accent); opacity: .72; -webkit-mask: url("assets/images/paw icon left.svg") center / contain no-repeat; mask: url("assets/images/paw icon left.svg") center / contain no-repeat; }
+.detail-paw-right { -webkit-mask-image: url("assets/images/paw icon right.svg"); mask-image: url("assets/images/paw icon right.svg"); }
+
+.book-characters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.book-characters .character { padding: 95px clamp(40px, 11vw, 160px) 110px; }
+.book-characters .character-inner { display: flex; flex-direction: column; gap: 50px; max-width: 420px; }
+.book-characters .character h2 { display: flex; align-items: center; justify-content: center; min-height: 140px; margin: 0; text-align: center; }
+.book-characters .character-portrait { width: 100%; }
+.book-characters .character-copy { padding-block: 85px; }
+.book-characters .character p { font-size: 26px; }
+.book-detail .book-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 1000px; gap: 32px; }
+.book-detail .book { grid-column: auto; }
+
+@media (max-width: 1200px) {
+  .book-detail .hero { height: max(80svh, 840px); }
+  .book-detail .hero-card { min-height: 560px; padding: 90px 35px 36px; }
+  .book-detail .hero-card h1 { font-size: 36px; }
+  .book-detail .hero-card p { font-size: 22px; }
+  .book-characters .character { padding-inline: 8%; }
+  .book-characters .character h2 { font-size: 47px; }
+  .book-characters .character p { font-size: 23px; }
+}
+@media (max-width: 960px) {
+  .detail-paw { width: 26px; height: 29px; }
+  .book-detail .hero { height: max(85svh, 800px); }
+  .book-detail .hero-content { padding-top: 180px; padding-bottom: 45px; }
+  .book-detail .hero-card { min-height: 540px; padding: 85px 30px 30px; }
+  .hero-book-title { width: 235px; height: 180px; top: -95px; }
+  .book-detail .hero-card h1 { font-size: 32px; }
+  .book-detail .hero-card p { font-size: 21px; }
+  .book-characters .character { padding: 70px 35px; }
+  .book-characters .character-inner { gap: 25px; }
+  .book-characters .character h2 { min-height: 110px; font-size: 38px; }
+  .book-characters .character-copy { padding-block: 50px; }
+  .book-characters .character p { font-size: 21px; }
+  .book-detail .book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 600px; gap: 45px 32px; }
+}
+@media (max-width: 600px) {
+  .detail-paw { width: 17px; height: 20px; }
+  .book-detail .hero { height: max(90svh, 800px); }
+  .book-detail .hero-video { object-position: 35% top; }
+  .book-detail .hero-content { padding-top: 230px; padding-bottom: 62px; }
+  .book-detail .hero-card { max-width: 360px; min-height: 0; padding: 65px 25px 24px; }
+  .hero-book-title { top: -76px; width: 195px; height: 140px; }
+  .book-detail .hero-card h1 { font-size: 27px; margin-bottom: 15px; padding-right: 0; }
+  .book-detail .hero-card p { font-size: 17px; margin-bottom: 15px; }
+  .book-detail .hero-button { margin-top: 8px; font-size: 21px; }
+  .book-characters { grid-template-columns: 1fr; }
+  .book-characters .character { padding: 50px 35px; }
+  .book-characters .character-inner { gap: 25px; max-width: 350px; }
+  .book-characters .character h2 { min-height: 0; font-size: 41px; }
+  .book-characters .character-portrait { width: min(100%, 300px); order: 0; }
+  .book-characters .character-copy { padding-block: 35px; }
+  .book-detail .book-grid { gap: 35px 18px; }
+  .book-detail .book:last-child { grid-column: auto; width: 100%; }
+}

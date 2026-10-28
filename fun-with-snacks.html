@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#e0e6ff">
+    <meta name="description" content="What’s for snack time? Funny shapes, yummy bites, and delicious surprises! Milo and Fiadh are ready to explore all sorts of tasty treats. What would you try first? There’s plenty of fun to be had when it’s time for a snack!">
+    <title>Milo and Fiadh Fun with Snacks · Milo and Fiadh</title>
+    <link rel="icon" href="assets/images/Logo%20Nav.png" type="image/png">
+    <link rel="preload" href="assets/fonts/quicksand-variable.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="book-details.css">
+    <script src="script.js" defer></script>
+    <script src="assets/vendor/gsap/gsap.min.js" defer></script>
+    <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="animations.js" defer></script>
+    <script src="amazon-links.mjs" type="module"></script>
+    <!-- Existing site analytics. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GFF7V2JGX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-6GFF7V2JGX');
+    </script>
+  </head>
+  <body class="book-detail detail-snacks">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="nav-background" aria-hidden="true"></div>
+      <nav class="nav-content" aria-label="Main navigation">
+        <a class="nav-logo" href="./" aria-label="Milo and Fiadh home">
+          <img src="assets/images/Book%20Logo%20003.png" alt="Milo and Fiadh" width="682" height="682" fetchpriority="high">
+        </a>
+        <a class="button nav-amazon" href="https://www.amazon.com/dp/1069597325?linkCode=ll2&amp;tag=adrianchan-20&amp;linkId=32d125adf2b813c3ec117533e04cc04a&amp;ref_=as_li_ss_tl" data-amazon-link="snacks" rel="sponsored">Now on Amazon</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-heading">
+        <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/images/book-003-poster.jpg" aria-hidden="true" tabindex="-1">
+          <source src="assets/videos/003%20Open.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+          <div class="hero-card" id="hero-card">
+            <button class="hero-card-control hero-card-close" type="button" aria-controls="hero-card" aria-label="Hide hero text" hidden>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+            </button>
+            <img class="hero-book-title" src="assets/images/Book%20Title%20003.png" alt="Milo and Fiadh Fun with Snacks" fetchpriority="high">
+            <h1 id="hero-heading"><span class="visually-hidden">Milo and Fiadh Fun with Snacks: </span>Yum, yum!<br>What’s for snack time?</h1>
+            <p>What’s for snack time? Funny shapes, yummy bites, and delicious surprises! Milo and Fiadh are ready to explore all sorts of tasty treats.</p>
+            <p>What would you try first? There’s plenty of fun to be had when it’s time for a snack!</p>
+            <a class="button hero-button" href="https://www.amazon.com/dp/1069597325?linkCode=ll2&amp;tag=adrianchan-20&amp;linkId=32d125adf2b813c3ec117533e04cc04a&amp;ref_=as_li_ss_tl" data-amazon-link="snacks" rel="sponsored" aria-label="Buy Milo and Fiadh Fun with Snacks on Amazon">Yummy!</a>
+          </div>
+        </div>
+        <button class="hero-card-control hero-card-restore" type="button" aria-controls="hero-card" aria-label="Restore hero text" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9h10M7 13h7M7 17h5"/></svg>
+        </button>
+        <button class="video-toggle" type="button" aria-controls="hero-video" aria-label="Pause background video" hidden>
+          <svg class="pause-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5 4h3v12H5zm7 0h3v12h-3z"/></svg>
+          <svg class="play-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="m6 3 11 7-11 7z"/></svg>
+          <span class="video-toggle-label">Pause video</span>
+        </button>
+      </section>
+
+      <div class="friendship-bar" aria-label="Big Adventures. Best Friends. Fun Memories.">
+        <span>Little wonders</span>
+        <span class="detail-paw detail-paw-left" aria-hidden="true"></span>
+        <span>Best Friends</span>
+        <span class="detail-paw detail-paw-right" aria-hidden="true"></span>
+        <span>Fun Memories</span>
+      </div>
+
+      <div class="book-characters">
+      <section class="character character-milo" aria-labelledby="milo-heading">
+        <div class="character-inner">
+            <h2 id="milo-heading">Who’s Milo??</h2>
+          <img class="character-portrait" src="assets/images/Milo%20Circle.png" alt="Milo, a fluffy little white dog, snuggled in an orange chair" width="1263" height="1263" loading="lazy">
+          <div class="character-copy">
+            <p>He may be small, but he has a very big heart. Sweet, brave, and always curious, Milo loves exploring, playing, and spending time with his best friend, <span class="character-name">Fiadh.</span></p>
+            <p>Whether they’re off on a little adventure or curled up for a cozy nap, Milo is happiest when they’re together.</p>
+          </div>
+        </div>
+      </section>
+      <section class="character character-fiadh" aria-labelledby="fiadh-heading">
+        <div class="character-inner">
+            <h2 id="fiadh-heading">What about<br>Fiadh?</h2>
+          <img class="character-portrait" src="assets/images/Fiadh%20Circle.png" alt="Fiadh smiling and waving, wearing her pink knitted hat and scarf" width="1263" height="1263" loading="lazy">
+          <div class="character-copy">
+            <p>Meet <span class="character-name">Fiadh</span> (pronounced fee-ah)! A curious little girl with a big personality and a love for discovering new things. She’s playful, kind, and always ready for a little adventure.</p>
+            <p>With her best friend <span class="character-name">Milo</span> by her side, even the simplest moments become something special!</p>
+          </div>
+        </div>
+      </section>
+      </div>
+
+      <section class="collection" id="collection" aria-labelledby="collection-heading">
+        <div class="collection-heading">
+          <h2 id="collection-heading">Find your next <span>favorite story!</span></h2>
+          <p>Little surprises, big discoveries, and lots of fun!</p>
+        </div>
+        <div class="book-grid">
+          <article class="book book-meet">
+            <a class="book-image" href="meet-milo-and-fiadh.html" aria-label="Explore Meet Milo and Fiadh"><img src="assets/images/Book%20Circle%20001.png" alt="Milo and Fiadh reading together on a cozy red sofa" width="762" height="762" loading="lazy"></a>
+            <h3><a href="meet-milo-and-fiadh.html">Meet Milo and<br>Fiadh</a></h3>
+            <p>From walkies to playtime, every day brings a new adventure for these two best friends!</p>
+            <a class="button book-button" href="meet-milo-and-fiadh.html" aria-label="Check out Meet Milo and Fiadh">Check it out!</a>
+          </article>
+          <article class="book book-backyard">
+            <a class="book-image" href="backyard-adventures.html" aria-label="Explore Backyard Adventures"><img src="assets/images/Book%20Circle%20002.png" alt="Milo and Fiadh exploring their sunny backyard" width="762" height="762" loading="lazy"></a>
+            <h3><a href="backyard-adventures.html">Backyard<br>Adventures</a></h3>
+            <p>Right outside the back door, there's a whole world of little wonders waiting to be discovered!</p>
+            <a class="button book-button" href="backyard-adventures.html" aria-label="Take a look at Backyard Adventures">Take a look</a>
+          </article>
+          <article class="book book-christmas">
+            <a class="book-image" href="a-milo-and-fiadh-christmas.html" aria-label="Explore A Milo and Fiadh Christmas"><img src="assets/images/Book%20Circle%20004.png" alt="Milo and Fiadh on a snowy Christmas adventure" width="762" height="762" loading="lazy"></a>
+            <h3><a href="a-milo-and-fiadh-christmas.html">A Milo and Fiadh<br>Christmas</a></h3>
+            <p>Getting ready for Santa brings lots of festive fun and a little Christmas magic!</p>
+            <a class="button book-button" href="a-milo-and-fiadh-christmas.html" aria-label="Explore A Milo and Fiadh Christmas">SANTA!</a>
+          </article>
+          <article class="book book-halloween">
+            <a class="book-image" href="halloween.html" aria-label="Explore Halloween"><img src="assets/images/Book%20Circle%20005.png" alt="Milo and Fiadh surrounded by pumpkins and Halloween decorations" width="762" height="762" loading="lazy"></a>
+            <h3><a href="halloween.html">Halloween</a></h3>
+            <p>With silly costumes and trick-or-treating, it's a night full of fun and surprises!</p>
+            <a class="button book-button" href="halloween.html" aria-label="Explore the Milo and Fiadh Halloween book">boo!</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="./" aria-label="Milo and Fiadh home"><img src="assets/images/Logo%20Footer.png" alt="Milo and Fiadh" width="900" height="900" loading="lazy"></a>
+          <p>Best Friends<br>Big Adventures</p>
+        </div>
+        <nav class="footer-collection" aria-labelledby="footer-collection-heading">
+          <h2 id="footer-collection-heading">Our collection</h2>
+          <ul>
+            <li><a href="meet-milo-and-fiadh.html">Meet Milo and Fiadh</a></li>
+            <li><a href="backyard-adventures.html">Milo and Fiadh Backyard Adventures</a></li>
+            <li><a href="fun-with-snacks.html">Milo and Fiadh Fun with Snacks</a></li>
+            <li><a href="a-milo-and-fiadh-christmas.html">A Milo and Fiadh Christmas</a></li>
+            <li><a href="halloween.html">Milo and Fiadh Halloween</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-info" aria-labelledby="footer-info-heading">
+          <h2 id="footer-info-heading">More info</h2>
+          <ul><li><a href="#">Info for parents</a></li><li><a href="#">About the author</a></li></ul>
+        </nav>
+        <div class="footer-social">
+          <h2>Where to find us</h2>
+          <ul>
+            <li><a href="https://www.instagram.com/miloandfiadh" aria-label="Milo and Fiadh on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@miloandfiadh</span></a></li>
+            <li><a href="https://www.tiktok.com/@miloandfiadh" aria-label="Milo and Fiadh on TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 3h3c.2 2.2 1.4 3.5 4 4v3a9 9 0 0 1-4-1.5V16a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3z"/></svg><span>@miloandfiadh</span></a></li>
+            <li><a href="https://www.youtube.com/@MiloAndFiadh" aria-label="Milo and Fiadh on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 6.4c-.2-.9-1.6-1.6-1.8-1.8C18.2 4.2 12 4.2 12 4.2s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8 2 12 2 12s0 4 .4 5.6c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8C22 16 22 12 22 12s0-4-.4-5.6z"/><path d="m10 8 6 4-6 4z" fill="#ccd5ae"/></svg><span>MiloAndFiadh</span></a></li>
+            <li><a href="mailto:hi@miloandfiadh.com" aria-label="Email Milo and Fiadh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 6 9 7 9-7"/></svg><span>hi@miloandfiadh.com</span></a></li>
+          </ul>
+          <div class="amazon-store-picker" hidden>
+            <label for="amazon-store">Your Amazon store</label>
+            <select id="amazon-store" name="amazon-store">
+              <option value="auto">Automatic</option>
+            </select>
+            <p id="amazon-store-status" class="visually-hidden" role="status"></p>
+          </div>
+          <a class="footer-amazon" href="https://www.amazon.com/dp/B0FF2T9PVG?linkCode=ll2&amp;tag=adrianchan-20&amp;linkId=32d125adf2b813c3ec117533e04cc04a&amp;ref_=as_li_ss_tl" data-amazon-link rel="sponsored" aria-label="Find Milo and Fiadh on Amazon"><img src="assets/images/Amazon%20Button%20Clear%20Background.svg" alt="Available at Amazon" width="250" height="120" loading="lazy"></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="copyright-year">2026</span> Milo and Fiadh</p>
+        <nav aria-label="Legal"><a href="#">Privacy</a><span aria-hidden="true">|</span><a href="#">Terms &amp; Conditions</a></nav>
+      </div>
+    </footer>
+  </body>
+</html>
