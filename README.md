@@ -7,10 +7,10 @@ Static website built with HTML, CSS, and browser JavaScript. No build step or de
 From this folder, run:
 
 ```sh
-python3 -m http.server 4173 --bind 127.0.0.1
+python3 scripts/preview-site.py
 ```
 
-Open http://127.0.0.1:4173 in your browser. Use this local preview so browsers can load the self-hosted font correctly.
+Open http://127.0.0.1:4173 in your browser. The preview honors the existing GitHub Pages/Jekyll publishing exclusions, extensionless HTML aliases, and the custom 404 page. Fonts, images, and videos are served locally. Optional analytics never loads on preview or local hosts.
 
 On the homepage, the hero text starts minimized and appears after five seconds. Visitors can use the restore button at the hero's bottom right to open it sooner; doing so cancels the automatic reveal, so closing it again keeps it minimized. All five book detail pages show their hero text immediately on page load. The video keeps playing, and the hidden/shown state persists when resizing. Reloading the homepage starts the five-second delay again. Automatic reveal does not move focus unless the restore button currently has focus. Without JavaScript, the text is visible immediately on every page.
 
@@ -79,6 +79,35 @@ Run routing checks with:
 node --test tests/*.test.mjs
 ```
 
-The hero's “Check it out!” button scrolls to the collection. Instagram, TikTok, and YouTube use the supplied profile URLs, and email uses `mailto:hi@miloandfiadh.com`. Unfinished information and legal links retain `href="#"`. The navigation and footer logos link home.
+The homepage hero's “Check it out!” button scrolls to the collection. Instagram, TikTok, and YouTube use the supplied profile URLs, and email uses `mailto:hi@miloandfiadh.com`. Information and legal links now lead to `info-for-parents.html`, `about-the-author.html`, `privacy.html`, and `terms-and-conditions.html`. The navigation and footer logos link home.
 
-The existing custom-domain file and Google Analytics configuration are retained. Changes are local; nothing is published automatically.
+## Search metadata and support pages
+
+All ten public pages have self-referencing canonical URLs on `https://miloandfiadh.com`, unique titles/descriptions, Open Graph/Twitter previews using existing images, and static JSON-LD connecting the site, operator, author, collection, and relevant books. Book markup contains no invented prices, reviews, or availability. Existing `.html` URLs remain canonical; the live host also serves extensionless aliases. `robots.txt` points to `sitemap.xml`. `404.html` is not indexable.
+
+The Parents and Author pages use the supplied copy. The supplied author photo is copied without modifying its bytes. Shared styles, original images, and existing page body text are protected by `tests/seo.test.mjs` using the dated baseline under `_project/seo-aeo/`.
+
+To regenerate the four support pages and refresh metadata after editing their source:
+
+```sh
+python3 scripts/build-info-pages.py
+node scripts/update-seo.mjs
+```
+
+The support-page copy lives in `scripts/build-info-pages.py`; search titles, descriptions, page inventory, and meaningful review dates live in `scripts/seo-data.mjs`. Update the review date only after a substantive change or review. The static output is committed as ordinary HTML and requires no runtime build.
+
+GitHub Pages currently builds `main:/` with Jekyll. `_config.yml` excludes development scripts, tests, working notes, the README, and old duplicate homepages from that public output. The old source files are retained in the checkout. When publishing through another tool, preserve that exclusion boundary rather than uploading the entire checkout.
+
+## Optional analytics
+
+`analytics.js` reuses measurement ID `G-6GFF7V2JGX` only after an explicit opt-in on the Privacy page. There is no analytics banner or added copy on existing pages. Before consent, no Google tag or denied-consent ping is sent. Choices last 180 days in this browser, can be withdrawn on the Privacy page, and synchronize across tabs. If storage is blocked, a choice works only for the current page. Withdrawal disables collection, removes this site's GA cookies, and reloads if the Google tag had already been loaded. Preview/local hosts never load analytics or alter local development analytics cookies.
+
+Collected page addresses omit queries/fragments, referrers are limited to origins, and conventional UTM campaign labels are passed separately only after bounded validation. Advertising storage, advertising user data, personalization, and Google signals are disabled in this site's tag configuration. No external Analytics account settings were changed or new tracking services added. Actual collection/receipt in the production GA property must be verified after an authorized publication and opt-in.
+
+Run the route checks while the preview is running:
+
+```sh
+python3 scripts/check-preview.py
+```
+
+The dated SEO/AEO handoff, sources, live audit observations, and release dependencies are in `_project/seo-aeo/2026-10-29.md`. The existing custom-domain file is retained. Changes remain local; nothing is published automatically.

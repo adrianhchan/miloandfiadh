@@ -1,0 +1,170 @@
+{
+  "revision": "a3ea581",
+  "pages": {
+    "index.html": {
+      "text": "67f41d7083cbfda1adcd04123ac8662ed9621b38cc417d17a7539c2fcafe65fb",
+      "images": [
+        " class=\"nav-background\" src=\"assets/images/Nav%20Background.svg\" alt=\"\" aria-hidden=\"true\"",
+        " src=\"assets/images/Logo%20Nav.png\" alt=\"Milo and Fiadh\" width=\"682\" height=\"682\" fetchpriority=\"high\"",
+        " src=\"assets/images/paw%20icon%20left.svg\" alt=\"\" width=\"32\" height=\"35\"",
+        " src=\"assets/images/paw%20icon%20right.svg\" alt=\"\" width=\"31\" height=\"29\"",
+        " src=\"assets/images/Book%20Circle%20001.png\" alt=\"Milo and Fiadh reading together on a cozy red sofa\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20002.png\" alt=\"Milo and Fiadh exploring their sunny backyard\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20003.png\" alt=\"Milo and Fiadh enjoying a tasty snack together\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20004.png\" alt=\"Milo and Fiadh on a snowy Christmas adventure\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20005.png\" alt=\"Milo and Fiadh surrounded by pumpkins and Halloween decorations\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " class=\"character-portrait\" src=\"assets/images/Milo%20Circle.png\" alt=\"Milo, a fluffy little white dog, snuggled in an orange chair\" width=\"1263\" height=\"1263\" loading=\"lazy\"",
+        " class=\"character-portrait\" src=\"assets/images/Fiadh%20Circle.png\" alt=\"Fiadh smiling and waving, wearing her pink knitted hat and scarf\" width=\"1263\" height=\"1263\" loading=\"lazy\"",
+        " class=\"amazon-feature-image\" src=\"assets/images/christmas-book-open-poster.jpg\" alt=\"A Milo and Fiadh Christmas book on a cozy desk beside a snowy window\" width=\"1280\" height=\"736\" loading=\"lazy\"",
+        " src=\"assets/images/Amazon%20Button%20White%20Background.svg\" alt=\"Available at Amazon\" width=\"250\" height=\"120\" loading=\"lazy\"",
+        " src=\"assets/images/Logo%20Footer.png\" alt=\"Milo and Fiadh\" width=\"900\" height=\"900\" loading=\"lazy\"",
+        " src=\"assets/images/social_instagram.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_tiktok.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_youtube.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_mail.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/Amazon%20Button%20Clear%20Background.svg\" alt=\"Available at Amazon\" width=\"250\" height=\"120\" loading=\"lazy\""
+      ]
+    },
+    "meet-milo-and-fiadh.html": {
+      "text": "f43a1bc2dba6492bfe86c26940d730ce053929b17720ea9226fdbe4a3a735bbf",
+      "images": [
+        " src=\"assets/images/Book%20Logo%20001.png\" alt=\"Milo and Fiadh\" width=\"682\" height=\"682\" fetchpriority=\"high\"",
+        " class=\"hero-book-title\" src=\"assets/images/Book%20Title%20001.png\" alt=\"Meet Milo and Fiadh\" fetchpriority=\"high\"",
+        " class=\"character-portrait\" src=\"assets/images/Milo%20Circle.png\" alt=\"Milo, a fluffy little white dog, snuggled in an orange chair\" width=\"1263\" height=\"1263\" loading=\"lazy\"",
+        " class=\"character-portrait\" src=\"assets/images/Fiadh%20Circle.png\" alt=\"Fiadh smiling and waving, wearing her pink knitted hat and scarf\" width=\"1263\" height=\"1263\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20002.png\" alt=\"Milo and Fiadh exploring their sunny backyard\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20003.png\" alt=\"Milo and Fiadh enjoying a tasty snack together\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20004.png\" alt=\"Milo and Fiadh on a snowy Christmas adventure\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20005.png\" alt=\"Milo and Fiadh surrounded by pumpkins and Halloween decorations\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Logo%20Footer.png\" alt=\"Milo and Fiadh\" width=\"900\" height=\"900\" loading=\"lazy\"",
+        " src=\"assets/images/social_instagram.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_tiktok.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_youtube.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_mail.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/Amazon%20Button%20Clear%20Background.svg\" alt=\"Available at Amazon\" width=\"250\" height=\"120\" loading=\"lazy\""
+      ]
+    },
+    "backyard-adventures.html": {
+      "text": "48509c68fb8e3aea002f49dd619dad36ad72942e963bffc542ad897c8cc4d965",
+      "images": [
+        " src=\"assets/images/Book%20Logo%20002.png\" alt=\"Milo and Fiadh\" width=\"682\" height=\"682\" fetchpriority=\"high\"",
+        " class=\"hero-book-title\" src=\"assets/images/Book%20Title%20002.png\" alt=\"Milo and Fiadh Backyard Adventures\" fetchpriority=\"high\"",
+        " class=\"character-portrait\" src=\"assets/images/Milo%20Circle.png\" alt=\"Milo, a fluffy little white dog, snuggled in an orange chair\" width=\"1263\" height=\"1263\" loading=\"lazy\"",
+        " class=\"character-portrait\" src=\"assets/images/Fiadh%20Circle.png\" alt=\"Fiadh smiling and waving, wearing her pink knitted hat and scarf\" width=\"1263\" height=\"1263\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20001.png\" alt=\"Milo and Fiadh reading together on a cozy red sofa\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20003.png\" alt=\"Milo and Fiadh enjoying a tasty snack together\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20004.png\" alt=\"Milo and Fiadh on a snowy Christmas adventure\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20005.png\" alt=\"Milo and Fiadh surrounded by pumpkins and Halloween decorations\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Logo%20Footer.png\" alt=\"Milo and Fiadh\" width=\"900\" height=\"900\" loading=\"lazy\"",
+        " src=\"assets/images/social_instagram.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_tiktok.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_youtube.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_mail.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/Amazon%20Button%20Clear%20Background.svg\" alt=\"Available at Amazon\" width=\"250\" height=\"120\" loading=\"lazy\""
+      ]
+    },
+    "fun-with-snacks.html": {
+      "text": "6b3952a5642a602dcad363c4ba72ced33fccecc1ed4a6634e0e1b3e1cbd48a65",
+      "images": [
+        " src=\"assets/images/Book%20Logo%20003.png\" alt=\"Milo and Fiadh\" width=\"682\" height=\"682\" fetchpriority=\"high\"",
+        " class=\"hero-book-title\" src=\"assets/images/Book%20Title%20003.png\" alt=\"Milo and Fiadh Fun with Snacks\" fetchpriority=\"high\"",
+        " class=\"character-portrait\" src=\"assets/images/Milo%20Circle.png\" alt=\"Milo, a fluffy little white dog, snuggled in an orange chair\" width=\"1263\" height=\"1263\" loading=\"lazy\"",
+        " class=\"character-portrait\" src=\"assets/images/Fiadh%20Circle.png\" alt=\"Fiadh smiling and waving, wearing her pink knitted hat and scarf\" width=\"1263\" height=\"1263\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20001.png\" alt=\"Milo and Fiadh reading together on a cozy red sofa\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20002.png\" alt=\"Milo and Fiadh exploring their sunny backyard\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20004.png\" alt=\"Milo and Fiadh on a snowy Christmas adventure\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20005.png\" alt=\"Milo and Fiadh surrounded by pumpkins and Halloween decorations\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Logo%20Footer.png\" alt=\"Milo and Fiadh\" width=\"900\" height=\"900\" loading=\"lazy\"",
+        " src=\"assets/images/social_instagram.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_tiktok.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_youtube.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_mail.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/Amazon%20Button%20Clear%20Background.svg\" alt=\"Available at Amazon\" width=\"250\" height=\"120\" loading=\"lazy\""
+      ]
+    },
+    "a-milo-and-fiadh-christmas.html": {
+      "text": "500c6447483f487ea7dfd353ff2fb2ba9df08c7706ff44a1d0df7f3665e6f175",
+      "images": [
+        " src=\"assets/images/Book%20Logo%20004.png\" alt=\"Milo and Fiadh\" width=\"682\" height=\"682\" fetchpriority=\"high\"",
+        " class=\"hero-book-title\" src=\"assets/images/Book%20Title%20004.png\" alt=\"A Milo and Fiadh Christmas\" fetchpriority=\"high\"",
+        " class=\"character-portrait\" src=\"assets/images/Milo%20Circle.png\" alt=\"Milo, a fluffy little white dog, snuggled in an orange chair\" width=\"1263\" height=\"1263\" loading=\"lazy\"",
+        " class=\"character-portrait\" src=\"assets/images/Fiadh%20Circle.png\" alt=\"Fiadh smiling and waving, wearing her pink knitted hat and scarf\" width=\"1263\" height=\"1263\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20001.png\" alt=\"Milo and Fiadh reading together on a cozy red sofa\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20002.png\" alt=\"Milo and Fiadh exploring their sunny backyard\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20003.png\" alt=\"Milo and Fiadh enjoying a tasty snack together\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20005.png\" alt=\"Milo and Fiadh surrounded by pumpkins and Halloween decorations\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Logo%20Footer.png\" alt=\"Milo and Fiadh\" width=\"900\" height=\"900\" loading=\"lazy\"",
+        " src=\"assets/images/social_instagram.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_tiktok.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_youtube.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_mail.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/Amazon%20Button%20Clear%20Background.svg\" alt=\"Available at Amazon\" width=\"250\" height=\"120\" loading=\"lazy\""
+      ]
+    },
+    "halloween.html": {
+      "text": "d39504b07a120f87091b44fa30d21b5c86abfa9908e94da65a035cd7f7afc7ab",
+      "images": [
+        " src=\"assets/images/Book%20Logo%20005.png\" alt=\"Milo and Fiadh\" width=\"682\" height=\"682\" fetchpriority=\"high\"",
+        " class=\"hero-book-title\" src=\"assets/images/Book%20Title%20005.png\" alt=\"Milo and Fiadh’s Halloween\" fetchpriority=\"high\"",
+        " class=\"character-portrait\" src=\"assets/images/Milo%20Circle.png\" alt=\"Milo, a fluffy little white dog, snuggled in an orange chair\" width=\"1263\" height=\"1263\" loading=\"lazy\"",
+        " class=\"character-portrait\" src=\"assets/images/Fiadh%20Circle.png\" alt=\"Fiadh smiling and waving, wearing her pink knitted hat and scarf\" width=\"1263\" height=\"1263\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20001.png\" alt=\"Milo and Fiadh reading together on a cozy red sofa\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20002.png\" alt=\"Milo and Fiadh exploring their sunny backyard\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20003.png\" alt=\"Milo and Fiadh enjoying a tasty snack together\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Book%20Circle%20004.png\" alt=\"Milo and Fiadh on a snowy Christmas adventure\" width=\"762\" height=\"762\" loading=\"lazy\"",
+        " src=\"assets/images/Logo%20Footer.png\" alt=\"Milo and Fiadh\" width=\"900\" height=\"900\" loading=\"lazy\"",
+        " src=\"assets/images/social_instagram.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_tiktok.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_youtube.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/social_mail.svg\" alt=\"\" aria-hidden=\"true\" width=\"25\" height=\"25\" loading=\"lazy\"",
+        " src=\"assets/images/Amazon%20Button%20Clear%20Background.svg\" alt=\"Available at Amazon\" width=\"250\" height=\"120\" loading=\"lazy\""
+      ]
+    }
+  },
+  "styles": {
+    "styles.css": "672ccb9a8df2c01cb601f0322843ab7cc47aef49fa76ecc99d27a194b74201b0",
+    "book-details.css": "29b10bc6d409d6951e5317161a7197b9c286272fe36c2d5eaf538fa9d3ae5ade"
+  },
+  "images": {
+    "A Cozy Milo and Fiadh Christmas.png": "4ce0cbf55ed4f332ed97fad63516274df0ebe8c51edf694ae1f85a3f652b9a75",
+    "Amazon Button Clear Background.svg": "220c330cf15cb66d1b51a238c4b72f1a3c8eabaa758ffd57b6b52e3b7713349f",
+    "Amazon Button White Background.svg": "d8149b15e92c9cbf79727bce4870b726b4f30efc01199348a497437c6996dcd2",
+    "Book Circle 001.png": "6090d2b5341fc7711d262b72cf50f3b8e591145d98e2b18ecaaa5eab45bcf0d8",
+    "Book Circle 002.png": "6e65e994dd87f71b63aa9402ce49a96e1c237f1b856764be8cb25ee6e2c31039",
+    "Book Circle 003.png": "c9b988e91fcb408c183844ec3724c9fc016258c64d69987f2bb0292b2592a3dc",
+    "Book Circle 004.png": "efcd74a9792ce2fb985b6d2383084de90863371efaf2b07ac6bb6fe8eedc8f3c",
+    "Book Circle 005.png": "54d4bfcae0d2fd27d850f1cbd2203cd4b925a23df644eb1b97945d573ed61935",
+    "Book Logo 001.png": "4bbc279483e0b1775a8142908f1e074d087d6523e75ef9a4987b3e7c181f8127",
+    "Book Logo 002.png": "7c0197e1f08bd42f8f509aed095a4d381461ec00bd6387abe9d396057511c3de",
+    "Book Logo 003.png": "01f7c00b0b300be8c45e0c89eece5326a184b887a031efec5c82ac89693ba8ef",
+    "Book Logo 004.png": "7fd6a0cfdeebf372fbde902bbfd5ec2a807ca1abb2bfb6280de1afb45fabdf34",
+    "Book Logo 005.png": "5bc1639c246de90cd2b47cb855b3eafa340fe1097cc0c44c9b6acf3bfcef5a3e",
+    "Book Title 001.png": "fa46851871af6ad905215655094d05a58991873422c6ae8ca8e2ed796d2bb865",
+    "Book Title 002.png": "bbd5b8ce4813cac7a5185e4c06945b911babcd6006bba58509752fe242971cec",
+    "Book Title 003.png": "22284152a6bfd47947126ecb953ba4ca199577d6f21bbdbdd61bd2101a5898e2",
+    "Book Title 004.png": "8125364f9fbf7782e6d45be3bdefd3a6b02b67b80696702e7661d41d56f1f25e",
+    "Book Title 005.png": "24bdbf94f3844fed9c3b5d7f09ed7657d320c9a7b94dd3aefc10721bf9843d0d",
+    "Fiadh Background Shape.svg": "8431fefd4f48ac52d9f9b2d186c009d43171b52e6e54e24458b2c4b473d690cb",
+    "Fiadh Circle.png": "a91325e0469690e7a8bdb1f1e3cc56849ebaffc6586b33f6545bddb62991364a",
+    "Footer Background.svg": "d83ec185435836c7f9c6d2fb69a035319615734ead903af25516c6b537dabc15",
+    "Logo Footer.png": "4d3181554b30e17c8a6252bb77f7c591268c91300903237942766e26304ebde5",
+    "Logo Nav.png": "eada4bb22e74e59e010d1be418d19d55bac88131be3eb85ae55b3f783fe1894a",
+    "Milo Background Shape.svg": "80cf357e06620ea7d973bcfc288c94a16c6feb941da64b3d8cc7b151115b27cd",
+    "Milo Circle.png": "b096769e7c85bf45f5eb5c5b384504ebf87bb89da4e873bb85de5d61c5a1a72d",
+    "Nav Background.svg": "2a460bf0e8a2544009c87c55c3b76beaa2ec067c609adfe6cd8ce0a986da8316",
+    "Title Background 01.svg": "512eb6f32ea43a72235ae8f246a1d156c8baa92bf3c85366a18a9bcd83d02f3d",
+    "book-001-poster.jpg": "45ece6a821c9fabf41098c7bcbf8dbc180649deacc724e98b79d0f17de34628a",
+    "book-002-poster.jpg": "d9151eae5674ed6decc34c5183a67cd268d5789ec4858ce116132f1707c717fe",
+    "book-003-poster.jpg": "784991a13ce1f320585015f2b334dce4e8bbd2b1bac81c17bb9bae1e656f5bde",
+    "book-004-poster.jpg": "823ea3a619554c5defb713e904acbb2e23dfd3daf3f75402831d769dff92aed9",
+    "book-005-poster.jpg": "4d31ce5287c03a315ddb66a1a8e64bc8829b35ebf69f211bb7db26e997163f0e",
+    "christmas-book-open-poster.jpg": "4e34c3a6c3bbcdce642317527d6ecafc873c3a8a7f04cd223cd7f9bcfd17f2df",
+    "hero-poster.jpg": "4ff3945664480269966e25e2124179a5ee3a6c5a53f2b80d925ad4afa52afc32",
+    "paw icon left.svg": "43844467fe47a60c08ca82eef379a3156fb22f3b40d3be40070d62e6e00e064d",
+    "paw icon right.svg": "6caee05b91273f8ee03eeff548623270c570320018da8037fb22e2bd1b125cc0",
+    "social_instagram.svg": "d940c2eb740e6e6e662fe576d9af4805d63fb404868ab7c56946ec406241c917",
+    "social_mail.svg": "22157ff6fb983965eedd754be918e9734fbc262f59baa0201a99413d45f23246",
+    "social_tiktok.svg": "47801f6267709a155e6b00c27963cf112f14ca4549846a35648a2806d119b8fb",
+    "social_youtube.svg": "6e64836beb9fee04e2719d177c52948ff0e178b443c766f4e72cfc627845ac6d"
+  }
+}

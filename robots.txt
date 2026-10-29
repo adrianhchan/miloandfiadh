@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://miloandfiadh.com/sitemap.xml

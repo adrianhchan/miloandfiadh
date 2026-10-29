@@ -1,0 +1,11 @@
+# GitHub Pages builds main:/ with Jekyll. Keep development and legacy files private to the source checkout.
+exclude:
+  - README.md
+  - scripts
+  - tests
+  - _project
+  - index copy.html
+  - index copy 2.html
+  - BGHero.jpg
+  - MiloAndFiadh.png
+  - cute-character-with-puppy.jpg
