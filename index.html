@@ -155,6 +155,7 @@
     <link rel="preload" href="assets/fonts/quicksand-variable.ttf" as="font" type="font/ttf" crossorigin>
     <script>document.documentElement.classList.add('hero-intro-pending');</script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="analytics-prompt.css">
     <script src="script.js" defer></script>
     <script src="assets/vendor/gsap/gsap.min.js" defer></script>
     <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
@@ -165,6 +166,14 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <aside class="analytics-prompt" aria-label="Optional analytics" data-analytics-prompt hidden>
+      <p>We use Google Analytics to understand site visits.</p>
+      <div class="analytics-prompt-actions">
+        <button type="button" data-analytics-choice="granted">Use analytics</button>
+        <button type="button" data-analytics-choice="denied" aria-label="Turn off analytics">Turn off</button>
+      </div>
+      <a href="privacy.html#analytics">Privacy &amp; analytics settings</a>
+    </aside>
     <header class="site-header">
       <img class="nav-background" src="assets/images/Nav%20Background.svg" alt="" aria-hidden="true">
       <nav class="nav-content" aria-label="Main navigation">

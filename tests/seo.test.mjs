@@ -12,7 +12,8 @@ const baseline = JSON.parse(read('_project/seo-aeo/content-baseline.json'));
 test('existing page copy, images, and shared visual styles are unchanged', () => {
   for (const [file, expected] of Object.entries(baseline.pages)) {
     const html = read(file);
-    const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/)[1];
+    const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/)[1]
+      .replace(/<aside\b[^>]*data-analytics-prompt[^>]*>[\s\S]*?<\/aside>/, '');
     const text = body.replace(/<script\b[\s\S]*?<\/script>/g, '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
     assert.equal(hash(text), expected.text, `${file}: page copy changed`);
     assert.deepEqual([...html.matchAll(/<img\b([^>]*)>/g)].map(match => match[1]), expected.images, `${file}: images changed`);

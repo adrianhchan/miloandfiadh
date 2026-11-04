@@ -7,14 +7,24 @@
   let initialized = false;
   let remembered = true;
   let allowed = false;
+  const prompt = document.querySelector('[data-analytics-prompt]');
 
   const read = () => {
+    let saved;
     try {
-      const value = JSON.parse(localStorage.getItem(KEY));
+      saved = localStorage.getItem(KEY);
+      remembered = true;
+    } catch {
+      remembered = false;
+      return null;
+    }
+    try {
+      const value = JSON.parse(saved);
       const age = Date.now() - value?.savedAt;
-      return value?.version === 1 && ['granted', 'denied'].includes(value.analytics)
-        && Number.isFinite(age) && age >= 0 && age < MAX_AGE ? value.analytics : 'denied';
-    } catch { return 'denied'; }
+      if (value?.version !== 1 || !Number.isFinite(age) || age < 0) return null;
+      if (value.analytics === 'denied') return 'denied';
+      return value.analytics === 'granted' && age < MAX_AGE ? 'granted' : null;
+    } catch { return null; }
   };
 
   const clearCookies = () => {
@@ -70,26 +80,29 @@
 
   const stop = () => {
     window[disableKey] = true;
-    document.querySelector('#optional-google-analytics')?.remove();
     clearCookies();
-    // Reload after withdrawal to remove code/listeners already loaded by Google.
-    if (initialized) location.reload();
+    // Reload only if the next page can read the opt-out.
+    if (initialized && remembered) {
+      document.querySelector('#optional-google-analytics')?.remove();
+      location.reload();
+    }
   };
 
-  const render = () => {
+  const render = choice => {
+    if (prompt) prompt.hidden = choice !== null;
     document.querySelectorAll('[data-analytics-controls]').forEach(panel => { panel.hidden = false; });
-    document.querySelectorAll('[data-analytics-choice]').forEach(button => {
+    document.querySelectorAll('[data-analytics-controls] [data-analytics-choice]').forEach(button => {
       button.setAttribute('aria-pressed', String((button.dataset.analyticsChoice === 'granted') === allowed));
     });
     document.querySelectorAll('[data-analytics-status]').forEach(status => {
-      status.textContent = `Optional analytics is ${allowed ? 'allowed' : 'off'}${remembered ? ' in this browser.' : ' for this page. Browser storage is unavailable, so your choice could not be saved.'}`;
+      status.textContent = `Optional analytics is ${allowed ? 'on' : 'off'}${remembered ? ' in this browser.' : ' for this page. Browser storage is unavailable, so your choice could not be saved.'}`;
     });
   };
 
   const apply = choice => {
-    allowed = choice === 'granted';
+    allowed = choice === 'granted' || (choice === null && remembered);
     window[disableKey] = !allowed || !production;
-    render();
+    render(choice);
     if (allowed) start();
     else stop();
   };

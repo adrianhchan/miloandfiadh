@@ -100,9 +100,11 @@ GitHub Pages currently builds `main:/` with Jekyll. `_config.yml` excludes devel
 
 ## Optional analytics
 
-`analytics.js` reuses measurement ID `G-6GFF7V2JGX` only after an explicit opt-in on the Privacy page. There is no analytics banner or added copy on existing pages. Before consent, no Google tag or denied-consent ping is sent. Choices last 180 days in this browser, can be withdrawn on the Privacy page, and synchronize across tabs. If storage is blocked, a choice works only for the current page. Withdrawal disables collection, removes this site's GA cookies, and reloads if the Google tag had already been loaded. Preview/local hosts never load analytics or alter local development analytics cookies.
+`analytics.js` loads the Google tag for measurement ID `G-6GFF7V2JGX` by default on the production host. The homepage shows a small prompt when there is no saved choice or when an on choice is over 180 days old. An opt-out stays in effect until the visitor turns analytics back on or clears site data, and saved choices synchronize across tabs. If browser storage cannot be read, analytics starts off and a choice applies only to the current page. Turning analytics off disables collection, clears this site's GA cookies, and reloads if the tag already loaded and the browser can read the saved choice. Preview/local hosts show the prompt without loading analytics or changing local development analytics cookies.
 
-Collected page addresses omit queries/fragments, referrers are limited to origins, and conventional UTM campaign labels are passed separately only after bounded validation. Advertising storage, advertising user data, personalization, and Google signals are disabled in this site's tag configuration. No external Analytics account settings were changed or new tracking services added. Actual collection/receipt in the production GA property must be verified after an authorized publication and opt-in.
+Collected page addresses omit queries/fragments, referrers are limited to origins, and conventional UTM campaign labels are passed separately only after bounded validation. Advertising storage, advertising user data, personalization, and Google signals are disabled in this site's tag configuration. No external Analytics account settings were changed or new tracking services added. Verify collection and receipt in the production GA property after publication.
+
+On November 4, 2026, the site owner requested the default-on behavior for the existing Google tag. France's CNIL describes a narrow audience-measurement exemption to prior consent. [CNIL audience measurement guidance](https://www.cnil.fr/fr/node/677)
 
 Run the route checks while the preview is running:
 

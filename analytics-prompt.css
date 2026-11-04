@@ -1,0 +1,33 @@
+.analytics-prompt {
+  position: fixed;
+  z-index: 9;
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  width: min(270px, calc(100% - 24px));
+  padding: 12px;
+  border: 1px solid var(--green);
+  border-radius: 14px;
+  background: #f9fbf5;
+  box-shadow: 0 3px 14px #393b3533;
+  font-size: 14px;
+  font-weight: 600;
+}
+.analytics-prompt p { margin: 0 0 8px; }
+.analytics-prompt-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.analytics-prompt button {
+  flex: 1 0 auto;
+  min-height: 36px;
+  padding: 5px 8px;
+  border: 1px solid #9aa87e;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+.analytics-prompt button:hover { background: #e9eddf; }
+.analytics-prompt a { display: inline-block; margin-top: 6px; padding: 3px 0; font-size: 13px; text-decoration: underline; }
+.analytics-prompt :is(a, button):focus-visible { outline-offset: 2px; }
+
+@media (max-width: 600px) {
+  .analytics-prompt { position: absolute; top: 112px; bottom: auto; }
+}

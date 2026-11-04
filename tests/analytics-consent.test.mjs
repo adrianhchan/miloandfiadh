@@ -8,11 +8,12 @@ const KEY = 'miloandfiadh.analyticsConsent';
 const NOW = Date.UTC(2026, 9, 29);
 const stored = (analytics, savedAt = NOW) => JSON.stringify({ version: 1, analytics, savedAt });
 
-function setup({ choice, host = 'miloandfiadh.com', blocked = false, search = '' } = {}) {
+function setup({ choice, host = 'miloandfiadh.com', blocked = false, search = '', home = false } = {}) {
   const state = new Map(choice ? [[KEY, choice]] : []);
   const tags = [];
   const deleted = [];
   const panel = { hidden: true };
+  const prompt = { hidden: true };
   const status = {};
   const buttons = ['granted', 'denied'].map(analyticsChoice => Object.assign(new EventTarget(), {
     dataset: { analyticsChoice }, attributes: {}, setAttribute(key, value) { this.attributes[key] = value; },
@@ -21,9 +22,17 @@ function setup({ choice, host = 'miloandfiadh.com', blocked = false, search = ''
     visibilityState: 'visible', referrer: 'https://example.com/story?email=private@example.com',
     head: { append(tag) { tags.push(tag); } },
     createElement: () => ({ remove() { this.removed = true; } }),
-    querySelector: () => tags.find(tag => !tag.removed),
+    querySelector(selector) {
+      if (selector === '[data-analytics-prompt]') return home ? prompt : null;
+      return tags.find(tag => !tag.removed);
+    },
     querySelectorAll(selector) {
-      return ({ '[data-analytics-controls]': [panel], '[data-analytics-choice]': buttons, '[data-analytics-status]': [status] })[selector] || [];
+      return ({
+        '[data-analytics-controls]': home ? [] : [panel],
+        '[data-analytics-controls] [data-analytics-choice]': home ? [] : buttons,
+        '[data-analytics-choice]': buttons,
+        '[data-analytics-status]': home ? [] : [status],
+      })[selector] || [];
     },
   });
   Object.defineProperty(document, 'cookie', {
@@ -41,22 +50,49 @@ function setup({ choice, host = 'miloandfiadh.com', blocked = false, search = ''
       setItem(key, value) { if (blocked) throw new Error('Blocked'); state.set(key, value); },
     },
   });
-  return { window, document, tags, deleted, panel, status, buttons, state, reloads: () => reloads, click: choice => buttons[choice === 'granted' ? 0 : 1].dispatchEvent(new Event('click')) };
+  return { window, document, tags, deleted, panel, prompt, status, buttons, state, reloads: () => reloads, click: choice => buttons[choice === 'granted' ? 0 : 1].dispatchEvent(new Event('click')) };
 }
 
-test('fresh visitors, refusal, and invalid/expired choices make no Google requests', () => {
-  for (const choice of [undefined, stored('denied'), 'bad-json', stored('granted', 0), stored('granted', NOW + 1), stored('other')]) {
+test('analytics starts by default for fresh visits and invalid or expired on choices', () => {
+  for (const choice of [undefined, 'bad-json', stored('granted', 0), stored('granted', NOW + 1), stored('other')]) {
+    const app = setup({ choice });
+    assert.equal(app.tags.length, 1);
+    assert.equal(app.window['ga-disable-G-6GFF7V2JGX'], false);
+    assert.equal(app.panel.hidden, false);
+    assert.equal(app.buttons[0].attributes['aria-pressed'], 'true');
+  }
+});
+
+test('saved opt-outs, including old ones, keep analytics off', () => {
+  for (const choice of [stored('denied'), stored('denied', 0)]) {
     const app = setup({ choice });
     assert.equal(app.tags.length, 0);
     assert.equal(app.window.dataLayer, undefined);
     assert.equal(app.window['ga-disable-G-6GFF7V2JGX'], true);
     assert.equal(app.panel.hidden, false);
     assert.equal(app.buttons[1].attributes['aria-pressed'], 'true');
+    assert.equal(setup({ home: true, choice }).prompt.hidden, true);
   }
 });
 
-test('explicit opt-in loads the existing tag once, remembers consent, and bounds attribution data', () => {
-  const app = setup({ search: '?utm_source=instagram&utm_campaign=winter_reads&utm_content=private%40example.com&email=private%40example.com#private' });
+test('homepage prompts for a missing or expired choice and hides after either response', () => {
+  for (const priorChoice of [undefined, stored('granted', 0)]) {
+    for (const choice of ['granted', 'denied']) {
+      const app = setup({ home: true, choice: priorChoice });
+      assert.equal(app.prompt.hidden, false);
+      assert.equal(app.tags.length, 1);
+      app.click(choice);
+      assert.equal(app.prompt.hidden, true);
+      assert.equal(Boolean(app.tags[0].removed), choice === 'denied');
+      const returning = setup({ home: true, choice: app.state.get(KEY) });
+      assert.equal(returning.prompt.hidden, true);
+      assert.equal(returning.tags.length, choice === 'granted' ? 1 : 0);
+    }
+  }
+});
+
+test('turning analytics back on loads the existing tag once and bounds attribution data', () => {
+  const app = setup({ choice: stored('denied'), search: '?utm_source=instagram&utm_campaign=winter_reads&utm_content=private%40example.com&email=private%40example.com#private' });
   app.click('granted');
   app.click('granted');
   assert.equal(app.tags.length, 1);
@@ -96,11 +132,13 @@ test('preview/local hosts never load analytics, even after an explicit choice', 
 
 test('blocked storage still supports an explicit choice for the current page', () => {
   const app = setup({ blocked: true });
+  assert.equal(app.tags.length, 0);
   app.click('granted');
   assert.equal(app.tags.length, 1);
   assert.match(app.status.textContent, /could not be saved/);
   app.click('denied');
-  assert.equal(app.reloads(), 1);
+  assert.equal(app.reloads(), 0);
+  assert.equal(app.window['ga-disable-G-6GFF7V2JGX'], true);
 });
 
 test('a withdrawal in another tab stops collection in this tab', () => {
