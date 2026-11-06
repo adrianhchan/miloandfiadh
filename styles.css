@@ -123,12 +123,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid #166b99; outline-offs
 .amazon-feature-button:hover { filter: drop-shadow(0 5px 10px #38201766); }
 .amazon-feature-button:focus-visible { outline-color: #fff; }
 
-.newsletter { padding: clamp(36px, 5vw, 64px) 16px; background: var(--mist); text-align: center; }
+.newsletter { padding: clamp(56px, 7vw, 96px) 16px; background: var(--mist); text-align: center; }
 .newsletter > h2 { width: min(100%, 520px); margin: 0 auto 10px; padding: 28px 38px; color: #176486; font-size: clamp(28px, 4.1vw, 44px); line-height: 1.15; background: url("assets/images/paw icon left.svg") 5% 48% / clamp(18px, 3vw, 30px) auto no-repeat, url("assets/images/paw icon right.svg") 95% 52% / clamp(18px, 3vw, 30px) auto no-repeat, url("assets/images/Title Background 01.svg") center / 100% 100% no-repeat; }
 .newsletter > p { max-width: 450px; margin: 0 auto 18px; font-size: clamp(16px, 2vw, 20px); font-weight: 600; line-height: 1.45; }
 .newsletter-button { min-height: 48px; padding: 8px 24px; border: 5px solid #f5f8f3; background: #ffe1bd; color: #8c4316; font-size: clamp(17px, 2vw, 20px); }
-.newsletter-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 18px; margin-top: 10px; }
-.newsletter-links a { padding-block: 8px; color: #176486; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 
 .site-footer { position: relative; padding: 75px 5.5% 26px; background: var(--green) url("assets/images/Footer Background.svg") center bottom / 100% auto no-repeat; }
 .footer-main { display: grid; grid-template-columns: 265px minmax(0, 1.55fr) minmax(0, .85fr) minmax(0, 1fr); gap: 35px; max-width: 1290px; margin: 0 auto; }
