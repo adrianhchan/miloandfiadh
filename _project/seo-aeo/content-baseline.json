@@ -2,7 +2,7 @@
   "revision": "a3ea581",
   "pages": {
     "index.html": {
-      "text": "67f41d7083cbfda1adcd04123ac8662ed9621b38cc417d17a7539c2fcafe65fb",
+      "text": "126495c33d31c0d4bed02e8eb997c03dfdbfbb2b167e9f16536bc2654cd6510d",
       "images": [
         " class=\"nav-background\" src=\"assets/images/Nav%20Background.svg\" alt=\"\" aria-hidden=\"true\"",
         " src=\"assets/images/Logo%20Nav.png\" alt=\"Milo and Fiadh\" width=\"682\" height=\"682\" fetchpriority=\"high\"",
@@ -122,7 +122,7 @@
     }
   },
   "styles": {
-    "styles.css": "672ccb9a8df2c01cb601f0322843ab7cc47aef49fa76ecc99d27a194b74201b0",
+    "styles.css": "8e712a3dbb396dbaa0d9d74490e7a719acb40dd06245f119d652e9ff2991892d",
     "book-details.css": "29b10bc6d409d6951e5317161a7197b9c286272fe36c2d5eaf538fa9d3ae5ade"
   },
   "images": {
