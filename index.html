@@ -163,6 +163,7 @@
     <script src="christmas-scroll.js" defer></script>
     <script src="amazon-links.mjs" type="module"></script>
     <script src="analytics.js" defer></script>
+    <script src="https://tally.so/widgets/embed.js" async></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -292,11 +293,29 @@
       <section class="newsletter" id="book-updates" aria-labelledby="newsletter-heading">
         <h2 id="newsletter-heading">Get book updates</h2>
         <p>New books and little adventures, by email for parents and grown-ups.</p>
-        <a class="button newsletter-button" href="https://docs.google.com/forms/d/e/1FAIpQLScEgcNUvapSs765Q3VJ-SW2JN2Mc_TgcXb1eajw8npWHpZDNQ/viewform">Sign up for book news</a>
+        <a class="button newsletter-button" id="newsletter-signup" href="https://tally.so/r/KpeJDV" aria-haspopup="dialog">Sign up for book news</a>
         <div class="newsletter-links">
           <a href="mailto:hi@miloandfiadh.com">hi@miloandfiadh.com</a>
           <a href="privacy.html#newsletter">Privacy policy</a>
         </div>
+        <script>
+          (() => {
+            const signup = document.querySelector('#newsletter-signup');
+
+            signup.addEventListener('click', event => {
+              if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+              if (typeof window.Tally?.openPopup !== 'function') return;
+
+              window.Tally.openPopup('KpeJDV', {
+                layout: 'modal',
+                overlay: true,
+                width: 560,
+                onClose: () => signup.focus({ preventScroll: true }),
+              });
+              event.preventDefault();
+            });
+          })();
+        </script>
       </section>
     </main>
 
