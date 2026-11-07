@@ -114,7 +114,7 @@ for filename, class_name, label, title, content in pages:
     <meta name="theme-color" content="#bee1e6">
     <meta name="description" content="{title} · Milo and Fiadh">
     <title>{label} · Milo and Fiadh</title>
-    <link rel="icon" href="assets/images/Logo%20Nav.png" type="image/png">
+    <link rel="icon" href="assets/images/paw%20icon%20left.svg" type="image/svg+xml" sizes="any">
     <link rel="preload" href="assets/fonts/quicksand-variable.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="info-pages.css">
